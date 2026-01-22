@@ -1512,12 +1512,12 @@ input, select, textarea {
   position: sticky;
   top: 0;
   z-index: 999;
-  background: linear-gradient(180deg, #2E7D32 0%, #1B5E20 100%);
+  background: linear-gradient(180deg, #388E3C 0%, #2E7D32 100%);
   box-shadow: 0 10px 30px rgba(0,0,0,0.10);
 }
 
 .header-bar {
-  max-width: 1200px;
+  max-width: 1287px;
   margin: 0 auto;
   padding: 14px 18px;
 
@@ -1594,7 +1594,7 @@ input, select, textarea {
   align-items: stretch;
   justify-content: center;
 
-  height: 74px;              /* 👈 gives you that “big-ass buttons” feel */
+  height: 200px;              /* 👈 gives you that “big-ass buttons” feel */
   border-radius: 14px;
   overflow: hidden;
 
@@ -1606,6 +1606,7 @@ input, select, textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  line-height: 3;
 
   height: 100%;
   padding: 0 26px;
@@ -1613,8 +1614,8 @@ input, select, textarea {
   color: #fff;
   text-decoration: none;
 
-  font-size: 1.4em;          /* 👈 bigger text */
-  font-weight: 800;
+  font-size: 1.6em;          /* 👈 bigger text */
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -1885,7 +1886,7 @@ input, select, textarea {
 			text-align: center;
 			color: #fff;
 			font-size: 1.25em;
-			background-color: #2E7D32;
+			background-color: #388E3C;
 		}
 
 			#titleBar .title {
