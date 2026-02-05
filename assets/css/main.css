@@ -1472,26 +1472,48 @@ input, select, textarea {
 			width: 178px;
 		}
 
-	ul.link-list li {
-		border-top: solid 1px #ddd;
-		padding: 0.75em 0 0 0;
-		margin: 0.75em 0 0 0;
-	}
+	/* ===== Modernizētas sānjoslas saites (Link List) ===== */
 
-		ul.link-list li:first-child {
-			padding-top: 0;
-			margin-top: 0;
-			border-top: 0;
-		}
+/* Noņemam veco, garlaicīgo līniju un atstarpes */
+ul.link-list li {
+    border-top: none !important;
+    padding: 0 !important;
+    margin: 0 0 12px 0 !important; /* Atstarpe starp pogām */
+}
+
+/* Pārveidojam saiti par "kartiņu/pogu" */
+ul.link-list li a {
+    display: block;              /* Padara visu laukumu klikšķināmu, ne tikai tekstu */
+    background: #ffffff;         /* Balts fons */
+    padding: 15px 20px;          /* Liela, ērta iekšējā atstarpe */
+    border-radius: 8px;          /* Noapaļoti stūri */
+    text-decoration: none !important; /* Noņem pasvītrojumu */
+    
+    color: #444;                 /* Neitrāla teksta krāsa */
+    font-weight: 700;            /* Nedaudz biezāks teksts */
+    
+    /* Vizuālie efekti */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Ļoti maiga ēna */
+    border-left: 5px solid #ddd; /* Pelēka svītra kreisajā pusē */
+    transition: all 0.2s ease-in-out; /* Animācija, lai viss notiek plūstoši */
+}
+
+/* Efekts, kad uzbrauc ar peli (HOVER) */
+ul.link-list li a:hover {
+    color: #2E7D32;              /* Teksts paliek skolas zaļajā krāsā */
+    border-left-color: #F57C00;  /* Sāna līnija paliek oranža */
+    background: #fff;            /* Fons paliek balts */
+    transform: translateX(7px);  /* Poga "pabrauc" pa labi */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Ēna kļūst izteiktāka */
+}
 
 	.button {
 		background-image: linear-gradient(to bottom, #F57C00, #E65100);
 		display: inline-block;
 		padding: 15px 25px 15px 25px;
 		background-color: #F57C00;
+		text-decoration: none !important;
 		border-radius: 10px;
-		text-transform: none;
-		text-decoration: none;
 		color: #fff;
 		font-size: 1.2em;
 		letter-spacing: -1px;
@@ -1517,7 +1539,7 @@ input, select, textarea {
 }
 
 .header-bar {
-  max-width: 1287px;
+  max-width: 1270px;
   margin: 0 auto;
   padding: 14px 18px;
 
