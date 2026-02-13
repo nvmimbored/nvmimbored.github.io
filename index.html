@@ -277,16 +277,17 @@
         const overlay = document.getElementById('wip-overlay');
         const btn = document.getElementById('accept-btn');
 
-        // Check if the user has already accepted the disclaimer
-        if (localStorage.getItem('disclaimerAccepted') === 'true') {
+        // CHANGE: We now check 'sessionStorage' instead of 'localStorage'
+        if (sessionStorage.getItem('disclaimerAccepted') === 'true') {
             overlay.style.display = 'none';
         }
 
-        // When the button is clicked, hide the popup and save the preference
         btn.addEventListener('click', function() {
             overlay.style.display = 'none';
-            // Saves a marker in the user's browser so it doesn't show again
-            localStorage.setItem('disclaimerAccepted', 'true'); 
+            
+            // CHANGE: We save to 'sessionStorage'. 
+            // This survives a refresh, but is deleted when the tab closes.
+            sessionStorage.setItem('disclaimerAccepted', 'true'); 
         });
     });
 </script>
