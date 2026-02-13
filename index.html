@@ -203,5 +203,93 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+<div id="wip-overlay" class="overlay">
+    <div class="popup-content">
+        <h2>🚧 Mājaslapa ir izstrādes procesā 🚧</h2>
+        <p>
+            Sveicināti! Lūdzu, ņemiet vērā, ka šī mājaslapa pašlaik tiek izstrādāta. 
+            Informācija var būt nepilnīga, un funkcijas var nedarboties kā paredzēts.
+        </p>
+        <p>
+            Paldies par Jūsu sapratni!
+        </p>
+        <button id="accept-btn" class="confirm-btn">Es Saprotu</button>
+    </div>
+</div>
+
+<style>
+    /* Covers the entire screen */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999; /* Ensures it stays on top of everything */
+    }
+
+    /* The actual white box */
+    .popup-content {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 500px;
+        width: 90%;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+    }
+
+    .popup-content h2 {
+        margin-top: 0;
+        color: #333;
+    }
+
+    .popup-content p {
+        color: #666;
+        line-height: 1.5;
+    }
+
+    /* The button styling */
+    .confirm-btn {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 15px;
+        transition: background 0.3s;
+    }
+
+    .confirm-btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const overlay = document.getElementById('wip-overlay');
+        const btn = document.getElementById('accept-btn');
+
+        // Check if the user has already accepted the disclaimer
+        if (localStorage.getItem('disclaimerAccepted') === 'true') {
+            overlay.style.display = 'none';
+        }
+
+        // When the button is clicked, hide the popup and save the preference
+        btn.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            // Saves a marker in the user's browser so it doesn't show again
+            localStorage.setItem('disclaimerAccepted', 'true'); 
+        });
+    });
+</script>
+
 	</body>
 </html>
