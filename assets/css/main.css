@@ -89,10 +89,31 @@ input, select, textarea {
 	body {
 		font-size: 13.5pt;
 		font-family: 'Lato', sans-serif;
-		background-color: #f5f5f5;
+		background-color: #fcf9f2;
 		color: #666;
 		letter-spacing: -0.2px;
+		margin: 0;
+    	padding: 0;
+    	min-height: 100vh; /* Takes up full height of the screen */
+    	display: flex;
+    	flex-direction: column;
+
+		background-image: repeating-linear-gradient(
+        	45deg,
+        	rgba(46, 125, 50, 0.03) 0,
+        	rgba(46, 125, 50, 0.03) 2px,
+        	transparent 2px,
+        	transparent 20px
+    	);
 	}
+
+	#page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    min-height: 100vh;
+}
 
 	h1, h2, h3, h4 {
 		color: #2E7D32;
@@ -1473,38 +1494,51 @@ input, select, textarea {
 		}
 
 	/* ===== Modernizētas sānjoslas saites (Link List) ===== */
+/* 1. Force the entire list to be a Flexbox column that stretches */
+ul.link-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* This is the magic rule that forces equal width */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
-/* Noņemam veco, garlaicīgo līniju un atstarpes */
+/* 2. Make sure the list items don't resist stretching */
 ul.link-list li {
     border-top: none !important;
     padding: 0 !important;
-    margin: 0 0 12px 0 !important; /* Atstarpe starp pogām */
+    margin: 0 0 12px 0 !important;
+    display: block;
+    width: 100%;
 }
 
-/* Pārveidojam saiti par "kartiņu/pogu" */
+/* 3. The Button Styling */
 ul.link-list li a {
-    display: block;              /* Padara visu laukumu klikšķināmu, ne tikai tekstu */
-    background: #ffffff;         /* Balts fons */
-    padding: 15px 20px;          /* Liela, ērta iekšējā atstarpe */
-    border-radius: 8px;          /* Noapaļoti stūri */
-    text-decoration: none !important; /* Noņem pasvītrojumu */
+    display: block;
+    width: 100%;
+    box-sizing: border-box; /* Keeps padding inside the box */
     
-    color: #444;                 /* Neitrāla teksta krāsa */
-    font-weight: 700;            /* Nedaudz biezāks teksts */
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-decoration: none !important;
     
-    /* Vizuālie efekti */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Ļoti maiga ēna */
-    border-left: 5px solid #ddd; /* Pelēka svītra kreisajā pusē */
-    transition: all 0.2s ease-in-out; /* Animācija, lai viss notiek plūstoši */
+    color: #444;
+    font-weight: 700;
+    
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 5px solid #ddd;
+    transition: all 0.2s ease-in-out;
 }
 
-/* Efekts, kad uzbrauc ar peli (HOVER) */
+/* 4. The Hover Effect (Keep your existing one) */
 ul.link-list li a:hover {
-    color: #2E7D32;              /* Teksts paliek skolas zaļajā krāsā */
-    border-left-color: #F57C00;  /* Sāna līnija paliek oranža */
-    background: #fff;            /* Fons paliek balts */
-    transform: translateX(7px);  /* Poga "pabrauc" pa labi */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Ēna kļūst izteiktāka */
+    color: #2E7D32;
+    border-left-color: #F57C00;
+    background: #fff;
+    transform: translateX(7px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
 	.button {
@@ -1519,12 +1553,16 @@ ul.link-list li a:hover {
 		letter-spacing: -1px;
 		border: solid 1px #E65100;
 		box-shadow: inset 0px 0px 0px 1px #FF9800;
+
+		transition: transform 0.3s ease;
 	}
 
 		.button:hover {
 			background-image: linear-gradient(to bottom, #FF9800, #F57C00);
 			background-color: #FF9800;
 			box-shadow: inset 0px 0px 0px 1px #FFB74D;
+
+			transform: scale(1.03);
 		}
 
 /* Header wrapper stays similar */
@@ -1565,13 +1603,20 @@ ul.link-list li a:hover {
   min-width: 260px;
 }
 
-.brand:hover { text-decoration: none; }
+.brand:hover {
+	text-decoration: none;
+}
 
 .brand-logo {
   height: 72px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 3px 6px rgba(0,0,0,0.25));
+  transition: transform 0.3s ease;
+}
+
+.bran-logo:hover {
+	transform: scale(1.05);
 }
 
 .brand-text {
@@ -1607,47 +1652,82 @@ ul.link-list li a:hover {
   width: auto;
   max-width: 320px;   /* 👈 wide logo cap */
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
-/* Navigation (center) — BIG FULL-HEIGHT TABS */
-.site-nav { grid-column: 1 / -1; grid-row: 2; }
+
+.county-logo:hover {
+  transform: scale(1.05);
+}
 
 .site-nav {
+  grid-column: 1 / -1; 
+  grid-row: 2;
   display: flex;
   align-items: stretch;
-  justify-content: center;
+  justify-content: space-between; /* Spreads items out */
 
-  height: 200px;              /* 👈 gives you that “big-ass buttons” feel */
+  height: 80px; /* Reduced from 200px to be more practical but still 'big' */
   border-radius: 14px;
   overflow: hidden;
 
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.14);
+  width: 100%; /* Ensure it fills the header-bar */
 }
 
+/* Make each link grow to fill equal space */
 .site-nav a {
   display: flex;
+  flex: 1; /* This is the magic: each button takes an equal share of the width */
   align-items: center;
   justify-content: center;
-  line-height: 3;
-
+  
   height: 100%;
-  padding: 0 26px;
+  padding: 0 10px; /* Minimal padding since flex: 1 handles the width */
 
   color: #fff;
   text-decoration: none;
 
-  font-size: 1.6em;          /* 👈 bigger text */
+  font-size: 1.4em; /* Large, readable text */
   font-weight: 700;
   white-space: nowrap;
+
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
+.site-nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* The Orange Line Animation */
+.site-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #F57C00;
+  transform: scaleX(0);
+  transform-origin: center; /* Makes it grow from the middle */
+  transition: transform 0.3s ease;
+}
+
+.site-nav a:hover::after {
+  transform: scaleX(1);
+}
+/* Keep the dividers between buttons */
 .site-nav a + a {
   border-left: 1px solid rgba(255,255,255,0.20);
 }
 
-.site-nav a:hover { background: rgba(255,255,255,0.12); }
-.site-nav a.is-active { background: rgba(0,0,0,0.18); }
-
+.site-nav a.is-active {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 -4px 0 0 #F57C00; /* Permanent orange line for active page */
+}
 
 /* Mobile hamburger (styled) */
 .nav-toggle {
@@ -1711,12 +1791,15 @@ ul.link-list li a:hover {
 
 /* Desktop scaling — use that empty space */
 @media (min-width: 1100px) {
-  .brand-logo { height: 84px; }
-  .county-logo { height: 84px; max-width: 360px; }
-  .site-nav { height: 80px; }
-  .site-nav a { font-size: 1.5em; padding: 0 30px; }
-}
+  .header-bar {
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 20px;
+  }
+  .brand { grid-column: 1; grid-row: 1; }
+  .county { grid-column: 2; grid-row: 1; }
 
+}
 /* Banner */
 
 	#banner-wrapper {
@@ -1724,36 +1807,44 @@ ul.link-list li a:hover {
 	}
 
 	#banner {
-		position: relative;
-		width: 100%;
-		padding: 6em 0;
-		border-radius: 10px;
-		background-image: url(images/aizupes_skola.jpg);
-		background-size: cover;
-		background-position: center 30%;
-		text-align: center;
-		box-shadow: inset 0 0 0 20px #fff;
+    	position: relative;
+    	width: 100%;
+    	padding: 7em 0; /* Increase padding slightly to compensate for the lost text */
+    	border-radius: 12px;
+    	background-image: url(images/aizupes_skola.jpg);
+    	background-size: cover;
+    	background-position: center 30%;
+    	text-align: center;
+
+		box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+
+		animation: smoothLoad 0.6s ease-out forwards;
 	}
 
 	#banner::before {
     	content: '';
     	position: absolute;
-    	top: 25%;
+    	/* Adjust these percentages to make the bar thinner or thicker */
+    	top: 35%; 
+    	bottom: 35%;
     	left: 0;
     	right: 0;
-    	bottom: 25%;
-    	background-color: rgba(0, 0, 0, 0.4);
+    	/* Lowered opacity as requested */
+    	background-color: rgba(0, 0, 0, 0.2); 
     	z-index: 0;
 	}
-		#banner h2 {
-			font-size: 3.3em;
-			color: #fff;
-			text-align: center;
-			letter-spacing: -2px;
-			margin: 0;
-			position: relative;
-			z-index: 2;
-		}
+
+	#banner h2 {
+    	font-size: 3.3em;
+    	color: #fff;
+    	text-align: center;
+    	letter-spacing: -2px;
+    	margin: 0;
+    	position: relative;
+		z-index: 2;
+
+		animation: smoothLoad 1s ease-out forwards;
+	}
 
 		#banner span {
 			display: block;
@@ -1769,31 +1860,51 @@ ul.link-list li a:hover {
 /* Main */
 
 	#main {
-		background: #fff;
+		background: transparent;
 		padding: 4em 0;
+		flex: 1 0 auto;
+
+		animation: smoothLoad 0.6s ease-out forwards;
 	}
+
+	#main img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 8px;
+	}
+
+	#main > .container, #main > .docs {
+    background-color: #ffffff; /* Clean white canvas for readability */
+    padding: 3em 4em;          /* Breathing room inside the white box */
+    border-radius: 12px;       /* Soft corners to match your buttons and banner */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04); /* Very soft 3D shadow */
+}
 
 /* Footer */
 
 	#footer-wrapper {
-		padding: 1.5em 0;
-		background-color: #f5f5f5;
+		padding: 2.5em 0;
+		background-color: #ffffff;
+		border-top: solid 1px #e0e0e0;
 		text-align: center;
+		flex-shrink: 0;
+		width: 100%;
 	}
 
 /* Copyright */
 
 	#copyright {
-    width: 94%;                 /* "Peldošais" platums */
-    margin: 1em auto 0 auto;    /* "Auto" iecentrē bloku horizontāli */
-    text-align: center;
-    font-size: 0.7em;
-    color: #999;
-    border-top: solid 1px #ddd;
-    padding-top: 0.5em;
-    padding-left: 0;            /* Noņemam nobīdes, lai centrs ir precīzs */
-    padding-right: 0;
-}
+		width: 94%;                 /* "Peldošais" platums */
+    	margin: 1em auto 0 auto;    /* "Auto" iecentrē bloku horizontāli */
+    	text-align: center;
+    	font-size: 0.7em;
+    	color: #999;
+		border-top: solid 1px #ddd;
+    	padding-top: 0.5em;
+    	padding-left: 0;            /* Noņemam nobīdes, lai centrs ir precīzs */
+    	padding-right: 0;
+	}
+
 
 		#copyright a {
 			color: #F57C00;
@@ -1843,18 +1954,19 @@ ul.link-list li a:hover {
 
 		#footer-wrapper {
 			padding: 1.5em 0;
+			flex-shrink: 0;
 		}
 
 		#copyright {
-			 width: 94%;                 /* "Peldošais" platums */
-    margin: 1em auto 0 auto;    /* "Auto" iecentrē bloku horizontāli */
-    text-align: center;
-    font-size: 0.7em;
-    color: #999;
-    border-top: solid 1px #ddd;
-    padding-top: 0.5em;
-    padding-left: 0;            /* Noņemam nobīdes, lai centrs ir precīzs */
-    padding-right: 0;
+			width: 94%;                 /* "Peldošais" platums */
+    	margin: 1em auto 0 auto;    /* "Auto" iecentrē bloku horizontāli */
+    	text-align: center;
+    	font-size: 0.7em;
+    	color: #999;
+    	border-top: solid 1px #ddd;
+    	padding-top: 0.5em;
+    	padding-left: 0;            /* Noņemam nobīdes, lai centrs ir precīzs */
+    	padding-right: 0;
 		}
 	}
 
@@ -1869,6 +1981,9 @@ ul.link-list li a:hover {
 
 		#page-wrapper {
 			padding-top: 0;
+			display: flex;
+    		flex-direction: column;
+    		min-height: 100vh;
 		}
 
 		#header-wrapper {
@@ -2111,10 +2226,12 @@ ul.link-list li a:hover {
 
 		#main {
 			padding: 40px 0;
+			flex: 1 0 auto;
 		}
 
 		#footer-wrapper {
 			padding: 40px 0;
+			flex-shrink: 0;
 		}
 
 		#copyright {
@@ -2260,6 +2377,7 @@ ul.link-list li a:hover {
 
 .history-image {
   min-height: 200px;
+  background-color: #f5f5f5;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -2296,6 +2414,11 @@ ul.link-list li a:hover {
 .brand-logo {
   height: 90px;
   width: auto;
+  transition: transform 0.3s ease;
+}
+
+.brandlogo:hover {
+	transform: scale(1.03);
 }
 
 /* Mazāks Jelgavas novada logo */
@@ -2305,48 +2428,13 @@ ul.link-list li a:hover {
   max-width: 220px;
 }
 
-/* Uz lieliem ekrāniem (1100px un vairāk): navigācija vienā rindā */
-@media (min-width: 1100px) {
-  /* Pārdefinē galvenes režģi, lai novietotu elementus vienā rindā */
-  .header-bar {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto;
-  }
-
-  /* Brand paliek kreisajā pusē */
-  .brand {
-    grid-column: 1;
-    grid-row: 1;
-    /* Samazina minimālo platumu un atstarpi, lai atbrīvotu vietu navigācijai */
-    min-width: unset;
-    gap: 10px;
-  }
-
-  /* Navigācijas saites pārvietotas centrā (kolonnā 2) */
-  .site-nav {
-    grid-column: 2;
-    grid-row: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: auto;
-  }
-
-  /* Rajona logotips labajā pusē */
-  .county {
-    grid-column: 3;
-    grid-row: 1;
-  }
-
-  /* Vēl lielāks skolas logo šajā izmērā */
-  .brand-logo {
-    height: 110px;
-  }
-
-  /* Samazina navigācijas pogu izmērus un paddingu, lai tās visas ietilptu vienā rindā */
-  .site-nav a {
-    font-size: 1.2em;
-    padding: 0 20px;
-    height: 100%;
-  }
+@keyframes smoothLoad {
+    0% {
+        opacity: 0;
+        transform: translateY(15px); /* Starts slightly lower */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends in its normal position */
+    }
 }
