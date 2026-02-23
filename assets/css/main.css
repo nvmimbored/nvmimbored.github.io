@@ -1617,7 +1617,7 @@ ul.link-list li a:hover {
   transition: transform 0.3s ease;
 }
 
-.bran-logo:hover {
+.brand-logo:hover {
 	transform: scale(1.05);
 }
 
@@ -1752,29 +1752,76 @@ ul.link-list li a:hover {
   background: #fff;
   margin: 6px 0;
   opacity: 0.95;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Responsive header behavior */
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media (max-width: 980px) {
-  .nav-toggle { display: inline-block; }
+  /* Move hamburger to Row 1, Column 2 */
+  .nav-toggle { 
+      display: inline-block; 
+      grid-column: 2;
+      grid-row: 1;
+  }
+
+  /* Hide the county logo on smaller screens so it doesn't fight the hamburger for space */
+  .county {
+      display: none;
+  }
 
   .header-bar {
-    grid-template-columns: 1fr auto;   /* brand | county */
-    grid-template-rows: auto auto;     /* identity | controls/nav */
+    grid-template-columns: 1fr auto;   /* brand | hamburger */
+    grid-template-rows: auto auto;     /* Row 1: identity+hamburger | Row 2: nav */
     min-height: unset;
   }
 
   /* Collapse the nav into a dropdown panel */
+  /* Collapse the nav into a dropdown panel */
   .site-nav {
-    display: none;
+    /* DELETE display: none; and change it to flex so it can animate */
+    display: flex; 
     flex-direction: column;
-    height: auto;
     justify-content: flex-start;
+    grid-column: 1 / -1;
+    grid-row: 2;
+	height: auto;
+    
+    /* --- THIS IS THE MAGIC THAT FIXES THE SNAP --- */
+    max-height: 0;       /* Squishes the height to zero */
+    opacity: 0;          /* Makes it invisible */
+    overflow: hidden;    /* Hides the buttons while it's squished */
+    margin-top: 0;
+    
+    /* Tells the green box to smoothly grow/shrink over 0.3s */
+    transition: max-height 0.3s ease-in-out, opacity 0.2s ease-in-out, margin-top 0.3s ease-in-out;
   }
 
-  .site-nav.is-open { display: flex; }
+  /* When JS says open */
+  .site-nav.is-open { 
+    max-height: 800px; /* Big enough to fit all your buttons */
+    opacity: 1;
+    margin-top: 15px; 
+  }
+
+  /* When JS says close */
+  .site-nav.is-closing {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+  }
 
   .site-nav a {
+	flex: none;
+	width: 100%;
     height: auto;
     padding: 14px 16px;
     justify-content: flex-start;
@@ -1957,18 +2004,6 @@ ul.link-list li a:hover {
 		#footer-wrapper {
 			padding: 1.5em 0;
 			flex-shrink: 0;
-		}
-
-		#copyright {
-			width: 94%;                 /* "Peldošais" platums */
-    	margin: 1em auto 0 auto;    /* "Auto" iecentrē bloku horizontāli */
-    	text-align: center;
-    	font-size: 0.7em;
-    	color: #999;
-    	border-top: solid 1px #ddd;
-    	padding-top: 0.5em;
-    	padding-left: 0;            /* Noņemam nobīdes, lai centrs ir precīzs */
-    	padding-right: 0;
 		}
 	}
 
@@ -2277,6 +2312,23 @@ ul.link-list li a:hover {
 
 .accordion[open] > summary::after { transform: rotate(180deg); }
 
+/* Triggers the animation when the dropdown is opened */
+.accordion[open] .doc-list {
+    animation: accordionSlideDown 0.35s ease-out forwards;
+}
+
+/* The "Movie Script" for the animation */
+@keyframes accordionSlideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px); /* Starts slightly tucked up under the title */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);     /* Slides down into its normal position */
+    }
+}
+
 .doc-list {
   margin: 0;
   padding: 0 16px 14px;
@@ -2419,7 +2471,7 @@ ul.link-list li a:hover {
   transition: transform 0.3s ease;
 }
 
-.brandlogo:hover {
+.brand-logo:hover {
 	transform: scale(1.03);
 }
 
@@ -2439,4 +2491,24 @@ ul.link-list li a:hover {
         opacity: 1;
         transform: translateY(0); /* Ends in its normal position */
     }
+}
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+::-webkit-scrollbar-track {
+    background: #fcf9f2; /* Matches your beige background */
+}
+::-webkit-scrollbar-thumb {
+    background-color: #388E3C; /* School Green */
+    border-radius: 10px;
+    border: 3px solid #fcf9f2; /* Creates a nice padding effect */
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #1B5E20; /* Darker green on hover */
+}
+
+a:focus-visible, button:focus-visible, details:focus-visible {
+    outline: 3px dashed #F57C00;
+    outline-offset: 4px;
 }
