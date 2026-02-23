@@ -1477,6 +1477,8 @@ input, select, textarea {
 
 	ul.small-image-list li {
 		overflow: hidden;
+		overflow-wrap: break-word;
+    	word-break: break-word;
 		margin-bottom: 1.5em;
 	}
 
