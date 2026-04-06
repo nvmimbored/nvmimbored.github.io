@@ -49,3 +49,50 @@
 				});
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+    const overlay = document.getElementById('wip-overlay');
+    if (!overlay) return; // Only run on pages with the overlay
+    const btn = document.getElementById('accept-btn');
+
+        // CHANGE: We now check 'sessionStorage' instead of 'localStorage'
+        if (sessionStorage.getItem('disclaimerAccepted') === 'true') {
+            overlay.style.display = 'none';
+        }
+
+        btn.addEventListener('click', function() {
+            overlay.style.display = 'none';
+
+            // CHANGE: We save to 'sessionStorage'.
+            // This survives a refresh, but is deleted when the tab closes.
+            sessionStorage.setItem('disclaimerAccepted', 'true');
+        });
+    });
+  // Advanced Mobile menu toggle with smooth close animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', () => {
+      // If the menu is CURRENTLY open...
+      if (nav.classList.contains('is-open')) {
+
+        // 1. Add the closing animation class
+        nav.classList.add('is-closing');
+        toggle.setAttribute('aria-expanded', 'false'); // Morphs the X back to hamburger
+
+        // 2. Wait exactly 300 milliseconds (the length of our CSS animation)
+        setTimeout(() => {
+          // 3. AFTER the animation finishes, actually hide the menu
+          nav.classList.remove('is-open');
+          nav.classList.remove('is-closing');
+        }, 300);
+
+      } else {
+        // If the menu is closed, just open it normally!
+        nav.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true'); // Morphs the hamburger to X
+      }
+    });
+  });

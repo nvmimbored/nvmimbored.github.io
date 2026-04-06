@@ -34,12 +34,12 @@
 
     <!-- Center: Navigation -->
     <nav class="site-nav" aria-label="Galvenā navigācija">
-    	<a href="index.html">Sākums</a>
-    	<a href="parskolu.html">Skola</a>
-    	<a href="skoleniem.html">Skolēniem</a>
-    	<a href="vecakiem.html" class="is-active">Vecākiem</a>
-    	<a href="projekti.html">Projekti</a>
-    	<a href="dokumentacija.html">Dokumenti</a>
+	<a href="index.html">Sākums</a>
+	<a href="parskolu.html">Skola</a>
+	<a href="skoleniem.html">Skolēniem</a>
+	<a href="vecakiem.html" class="is-active">Vecākiem</a>
+	<a href="projekti.html">Projekti</a>
+	<a href="dokumentacija.html">Dokumenti</a>
 	</nav>
 
     <!-- Right: County logo -->
@@ -50,36 +50,7 @@
   </div>
 </header>
 
-<script>
-  // Advanced Mobile menu toggle with smooth close animation
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
 
-    toggle.addEventListener('click', () => {
-      // If the menu is CURRENTLY open...
-      if (nav.classList.contains('is-open')) {
-        
-        // 1. Add the closing animation class
-        nav.classList.add('is-closing');
-        toggle.setAttribute('aria-expanded', 'false'); // Morphs the X back to hamburger
-        
-        // 2. Wait exactly 300 milliseconds (the length of our CSS animation)
-        setTimeout(() => {
-          // 3. AFTER the animation finishes, actually hide the menu
-          nav.classList.remove('is-open');
-          nav.classList.remove('is-closing');
-        }, 300);
-
-      } else {
-        // If the menu is closed, just open it normally!
-        nav.classList.add('is-open');
-        toggle.setAttribute('aria-expanded', 'true'); // Morphs the hamburger to X
-      }
-    });
-  });
-</script>
 
 
 			<!-- Main -->
@@ -88,14 +59,14 @@
 						<div class="row main-row">
 							<div class="col-3 col-12-medium">
 
-    							<section>
-        							<h2>Vecākiem</h2>
-        							<ul class="link-list">
-            							<li><a href="biedriba.html">Biedrība</a></li>
-            							<li><a href="vecakupadome.html">Padome</a></li>
-            							<li><a href="edienkarte.html">Ēdienkarte</a></li>
-        							</ul>
-    							</section>
+							<section>
+								<h2>Vecākiem</h2>
+								<ul class="link-list">
+								<li><a href="biedriba.html">Biedrība</a></li>
+								<li><a href="vecakupadome.html">Padome</a></li>
+								<li><a href="edienkarte.html">Ēdienkarte</a></li>
+								</ul>
+							</section>
 							</div>
 
 							<div class="col-8 col-12-medium imp-medium">
@@ -103,13 +74,13 @@
         <a href="assets/docs/buklets_vecakiem.pdf" target="_blank" class="image featured" style="display: block; margin-bottom: 1em;">
             <img src="images/buklets_vaks.png" alt="Bukleta vāks" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
         </a>
-        
+
         <header>
             <h3>Pamatskola</h3>
         </header>
-        
+
         <p>Buklets vecākiem par pilnveidoto mācību saturu un pieeju pamatizglītībā.</p>
-        
+
         <footer>
             <a href="assets/docs/Skola2030_buklets_Pamatskola.pdf" target="_blank" class="button alt">Atvērt PDF</a>
         </footer>
@@ -125,7 +96,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="row">
-    
+
     <div class="col-4 col-12-medium">
         <section>
             <h2>Saziņa</h2>
@@ -141,7 +112,7 @@
     <div class="col-4 col-12-medium">
         <section>
             <h2>Svarīgas sadaļas</h2>
-            <ul class="style2"> 
+            <ul class="style2">
                 <li><a href="uznemsana.html">Uzņemšana</a></li>
                 <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
                 <li><a href="biedriba.html">Biedrība</a></li>
