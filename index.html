@@ -50,19 +50,7 @@
   </div>
 </header>
 
-<script>
-  // Mobile menu toggle (safe on pages where header exists)
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
 
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-</script>
 
 
 			<!-- Banner -->
@@ -95,7 +83,7 @@
 
 								<article class="blog-post">
 									<h2>Jaunākais raksts</h2>
-									<a href="raksts.html"><img src="images/pic6.jpg" alt="" class="top blog-post-image" /></a>
+									<a href="raksts.html"><img src="images/pic6.jpg" alt="Raksta attēls, kas ilustrē jaunāko rakstu" class="top blog-post-image" /></a>
 									<h3>Aizupes pamatskolas mājaslapas raksta piemērs.</h3>
 									<p>Aizupes pamatskolas mājaslapa.</p>
 									<footer class="controls">
@@ -181,80 +169,6 @@
     </div>
 </div>
 
-<style>
-    /* Covers the entire screen */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Ensures it stays on top of everything */
-    }
-
-    /* The actual white box */
-    .popup-content {
-        background-color: white;
-        padding: 30px;
-        border-radius: 8px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        font-family: Arial, sans-serif;
-    }
-
-    .popup-content h2 {
-        margin-top: 0;
-        color: #333;
-    }
-
-    .popup-content p {
-        color: #666;
-        line-height: 1.5;
-    }
-
-    /* The button styling */
-    .confirm-btn {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 15px;
-        transition: background 0.3s;
-    }
-
-    .confirm-btn:hover {
-        background-color: #0056b3;
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const overlay = document.getElementById('wip-overlay');
-        const btn = document.getElementById('accept-btn');
-
-        // CHANGE: We now check 'sessionStorage' instead of 'localStorage'
-        if (sessionStorage.getItem('disclaimerAccepted') === 'true') {
-            overlay.style.display = 'none';
-        }
-
-        btn.addEventListener('click', function() {
-            overlay.style.display = 'none';
-            
-            // CHANGE: We save to 'sessionStorage'. 
-            // This survives a refresh, but is deleted when the tab closes.
-            sessionStorage.setItem('disclaimerAccepted', 'true'); 
-        });
-    });
-</script>
 
 	</body>
 </html>

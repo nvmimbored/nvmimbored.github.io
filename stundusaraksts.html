@@ -34,12 +34,12 @@
 
     <!-- Center: Navigation -->
     <nav class="site-nav" aria-label="Galvenā navigācija">
-    	<a href="index.html">Sākums</a>
-    	<a href="parskolu.html">Skola</a>
-    	<a href="skoleniem.html">Skolēniem</a>
-    	<a href="vecakiem.html">Vecākiem</a>
-    	<a href="projekti.html">Projekti</a>
-    	<a href="dokumentacija.html">Dokumenti</a>
+	<a href="index.html">Sākums</a>
+	<a href="parskolu.html">Skola</a>
+	<a href="skoleniem.html">Skolēniem</a>
+	<a href="vecakiem.html">Vecākiem</a>
+	<a href="projekti.html">Projekti</a>
+	<a href="dokumentacija.html">Dokumenti</a>
 	</nav>
 
     <!-- Right: County logo -->
@@ -50,36 +50,7 @@
   </div>
 </header>
 
-<script>
-  // Advanced Mobile menu toggle with smooth close animation
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
 
-    toggle.addEventListener('click', () => {
-      // If the menu is CURRENTLY open...
-      if (nav.classList.contains('is-open')) {
-        
-        // 1. Add the closing animation class
-        nav.classList.add('is-closing');
-        toggle.setAttribute('aria-expanded', 'false'); // Morphs the X back to hamburger
-        
-        // 2. Wait exactly 300 milliseconds (the length of our CSS animation)
-        setTimeout(() => {
-          // 3. AFTER the animation finishes, actually hide the menu
-          nav.classList.remove('is-open');
-          nav.classList.remove('is-closing');
-        }, 300);
-
-      } else {
-        // If the menu is closed, just open it normally!
-        nav.classList.add('is-open');
-        toggle.setAttribute('aria-expanded', 'true'); // Morphs the hamburger to X
-      }
-    });
-  });
-</script>
 
 			<!-- Main -->
 				<div id="main">
@@ -92,14 +63,14 @@
 									<div>
 										<div class="row">
 											<div class="col-8 col-12-medium">
-        							<ul class="link-list">
+								<ul class="link-list">
 										<li><a href="stundusaraksts.html" style="color: #2E7D32; border-left-color: #F57C00;">Stundu saraksts</a></li>
 										<li><a href="konsultacijas.html">Konsultācijas</a></li>
 										<li><a href="eksamenugrafiks.html">Eksāmenu grafiks</a></li>
-            							<li><a href="interesuizglitiba.html">Interešu izglītība</a></li>
-            							<li><a href="brivlaiki.html">Brīvlaiki</a></li>
-            							<li><a href="skolenupadome.html">Skolēnu padome</a></li>
-        							</ul>
+								<li><a href="interesuizglitiba.html">Interešu izglītība</a></li>
+								<li><a href="brivlaiki.html">Brīvlaiki</a></li>
+								<li><a href="skolenupadome.html">Skolēnu padome</a></li>
+								</ul>
 											</div>
 										</div>
 									</div>
@@ -110,21 +81,21 @@
 
 								<section>
 									<h2>Stundu saraksts 2025./2026. mācību gadā</h2>
-    
-    								<div style="margin-top: 20px; margin-bottom: 20px;">
-        
-        							<iframe 
-            							src="assets/docs/stundusaraksts20252026.pdf" 
-            							width="100%" 
-            							height="800px" 
-            							style="border: 1px solid #ccc;">
-        							</iframe>
 
-        							<p style="font-size: 0.9em; margin-top: 5px;">
-            							Neredzi dokumentu? <a href="assets/docs/stundusaraksts20252026.pdf" target="_blank">Atvērt PDF failu jaunā logā</a>.
-        							</p>
+								<div style="margin-top: 20px; margin-bottom: 20px;">
 
-    								</div>
+								<iframe
+								src="assets/docs/stundusaraksts20252026.pdf"
+								width="100%"
+								height="800px"
+								style="border: 1px solid #ccc;">
+								</iframe>
+
+								<p style="font-size: 0.9em; margin-top: 5px;">
+								Neredzi dokumentu? <a href="assets/docs/stundusaraksts20252026.pdf" target="_blank">Atvērt PDF failu jaunā logā</a>.
+								</p>
+
+								</div>
 								</section>
 
 							</div>
@@ -138,7 +109,7 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="row">
-    
+
     <div class="col-4 col-12-medium">
         <section>
             <h2>Saziņa</h2>
@@ -154,7 +125,7 @@
     <div class="col-4 col-12-medium">
         <section>
             <h2>Svarīgas sadaļas</h2>
-            <ul class="style2"> 
+            <ul class="style2">
                 <li><a href="uznemsana.html">Uzņemšana</a></li>
                 <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
                 <li><a href="biedriba.html">Biedrība</a></li>
