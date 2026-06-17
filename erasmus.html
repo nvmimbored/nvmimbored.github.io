@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<!--
+	Minimaxing by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Aizupes pamatskola</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header class="site-header">
+  <div class="header-bar">
+
+    <!-- Left: School identity -->
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
+      <div class="brand-text">
+        <div class="brand-name">Aizupes pamatskola</div>
+        <div class="brand-values">Cieņa • Atbildība • Drošība</div>
+      </div>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Center: Navigation -->
+    <nav class="site-nav" aria-label="Galvenā navigācija">
+    	<a href="index.html">Sākums</a>
+    	<a href="parskolu.html">Skola</a>
+    	<a href="skoleniem.html">Skolēniem</a>
+    	<a href="vecakiem.html">Vecākiem</a>
+    	<a href="projekti.html" class="is-active">Projekti</a>
+    	<a href="dokumentacija.html">Dokumenti</a>
+	</nav>
+
+    <!-- Right: County logo -->
+    <a class="county" href="#" aria-label="Jelgavas novads">
+      <img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
+    </a>
+
+  </div>
+</header>
+
+<script>
+  // Advanced Mobile menu toggle with smooth close animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.site-nav');
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener('click', () => {
+      // If the menu is CURRENTLY open...
+      if (nav.classList.contains('is-open')) {
+        
+        // 1. Add the closing animation class
+        nav.classList.add('is-closing');
+        toggle.setAttribute('aria-expanded', 'false'); // Morphs the X back to hamburger
+        
+        // 2. Wait 300 milliseconds (the length of CSS animation)
+        setTimeout(() => {
+          // 3. AFTER the animation finishes, hide the menu
+          nav.classList.remove('is-open');
+          nav.classList.remove('is-closing');
+        }, 300);
+
+      } else {
+        // If the menu is closed, just open it normally!
+        nav.classList.add('is-open');
+        toggle.setAttribute('aria-expanded', 'true'); // Morphs the hamburger to X
+      }
+    });
+  });
+</script>
+
+			<!-- Main -->
+				<div id="main">
+					<div class="container">
+						<div class="row main-row">
+							<div class="col-3 col-12-medium">
+
+    							<section>
+									<h2>Projekti</h2>
+									<ul class="link-list">
+										<li><a href="erasmus.html" style="color: #2E7D32; border-left-color: #F57C00;">Erasmus+</a></li>
+										<li><a href="mot.html">MOT</a></li>
+										<li><a href="kiva.html">KiVa</a></li>
+										<li><a href="skolassoma.html">Skolas soma</a></li>
+										<li><a href="stem.html">STEM</a></li>
+										<li><a href="veselibuveicinosaskola.html">Veselību veicinoša skola</a></li>
+									</ul>
+								</section>
+							</div>
+
+							<div class="col-8 col-12-medium imp-medium">
+
+								<section>
+									<h2>Eiropas Savienības programma "Erasmus+"</h2>
+									<p><strong>"Erasmus+" ir ES programma izglītības, apmācības, jaunatnes un sporta atbalstam Eiropā.</strong> Skolām dalība programmā nozīmē iespēju nojaukt robežas un pavērt durvis uz Eiropu. Tā ir unikāla iespēja gan skolēniem, gan skolotajiem doties pieredzes apmaiņas braucienos, sadarboties ar citām Eiropas skolām un realizēt starptautiskus projektus.</p>
+									<p><strong>Galvenie ieguvumi no dalības "Erasmus+" programmā:</strong></p>
+									<ul>
+										<li><strong>Skolēniem:</strong> Iespēja iepazīt dažādas kultūras un tradīcijas, praktizēt un uzlabot svešvalodu zināšanas reālās dzīves situācijās, iegūt jaunus draugus visā Eiropā un attīstīt patstāvību.</li>
+                                        <p></p>
+										<li><strong>Skolotājiem:</strong> Iespēja pilnveidot savas profesionālās prasmes, apgūt jaunas, inovatīvas mācību metodes kursos ārzemēs un "ēnot" kolēģus citās Eiropas valstīs.</li>
+                                        <p></p>
+										<li><strong>Skolai kopumā:</strong> Starptautiskas un atvērtas vides veidošana, izglītības kvalitātes paaugstināšana un jaunu ideju integrēšana ikdienas mācību procesā.</li>
+									</ul>
+									<p>Šeit būs skolas realizētie un aktuālie projekti. (+foto?)</p>
+                                    <p>Plašāku informāciju par programmu, tās mērķiem un sniegtajām iespējām aicinām lasīt oficiālajā <a href="https://erasmusplus.lv/" target="_blank" rel="noopener noreferrer">"Erasmus+" mājaslapā.</a></p>
+								</section>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="row">
+    
+    <div class="col-4 col-12-medium">
+        <section>
+            <h2>Saziņa</h2>
+            <p>
+                <strong>Aizupes pamatskola</strong><br>
+				Darba laiks: 08:00 - 16:00<br>
+                Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
+                E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
+            </p>
+        </section>
+    </div>
+
+    <div class="col-4 col-12-medium">
+        <section>
+            <h2>Svarīgas sadaļas</h2>
+            <ul class="style2"> 
+                <li><a href="uznemsana.html">Uzņemšana</a></li>
+                <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
+                <li><a href="biedriba.html">Biedrība</a></li>
+                <li><a href="vecakiem.html">Vecākiem</a></li>
+                <li><a href="darbinieki.html">Darbinieki</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="col-4 col-12-medium">
+        <section>
+            <h2>Adrese</h2>
+            <p>
+                Tušķi, Līvbērzes pag.,<br>
+				Jelgavas novads,<br>
+				LV-3003<br>
+            <a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
+			</p>
+        </section>
+    </div>
+
+								<div id="copyright">
+									&copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
