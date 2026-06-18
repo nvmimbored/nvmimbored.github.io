@@ -1571,8 +1571,6 @@ ul.link-list li a:hover {
 /* ===== Modern School Header ===== */
 
 .site-header {
-  position: sticky;
-  top: 0;
   z-index: 999;
   background: linear-gradient(180deg, #388E3C 0%, #2E7D32 100%);
   box-shadow: 0 10px 30px rgba(0,0,0,0.10);
