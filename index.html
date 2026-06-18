@@ -10,148 +10,289 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* --- Facebook stretch wrapper --- */
+			.fb-stretch-wrap {
+				width: 100%;
+				overflow: hidden;
+			}
+			.fb-stretch-inner {
+				width: 500px;
+				transform-origin: top left;
+			}
+ 
+			/* --- Date widget --- */
+			.date-widget {
+				background-color: #2E7D32;
+				border-radius: 4px;
+				padding: 1.2em 1em 1em;
+				text-align: center;
+				color: #fff;
+				margin-bottom: 1.5em;
+				line-height: 1;
+			}
+			.date-widget .dw-year {
+				font-size: 0.85em;
+				opacity: 0.75;
+				letter-spacing: 0.08em;
+				margin-bottom: 0.4em;
+			}
+			.date-widget .dw-day {
+				font-size: 4em;
+				font-weight: bold;
+				margin: 0.05em 0;
+			}
+			.date-widget .dw-month {
+				font-size: 1em;
+				letter-spacing: 0.06em;
+				opacity: 0.85;
+				text-transform: uppercase;
+			}
+			.date-widget .dw-weekday {
+				font-size: 0.8em;
+				opacity: 0.65;
+				margin-top: 0.5em;
+			}
+ 
+			/* --- Quick links grid --- */
+			.quick-links h2 {
+				margin-bottom: 0.8em;
+			}
+			.quick-links-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 0.6em;
+			}
+			.quick-link-btn {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background-color: #fdfdfd;
+				border: 1px solid #e0e0e0;
+				border-radius: 4px;
+				padding: 0.7em 0.5em;
+				text-decoration: none;
+				transition: border-color 0.2s, background-color 0.2s;
+				min-height: 52px;
+			}
+			.quick-link-btn:hover {
+				border-color: #2E7D32;
+				background-color: #f1f8e9;
+			}
+			.quick-link-btn img {
+				max-width: 100%;
+				max-height: 36px;
+				width: auto;
+				height: auto;
+				object-fit: contain;
+				display: block;
+			}
+		</style>
 	</head>
 	<body>
 		<div id="page-wrapper">
-
+ 
 			<!-- Header -->
-				<header class="site-header">
-  <div class="header-bar">
-
-    <!-- Left: School identity -->
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
-      <div class="brand-text">
-        <div class="brand-name">Aizupes pamatskola</div>
-        <div class="brand-values">Cieņa • Atbildība • Drošība</div>
-      </div>
-    </a>
-
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Center: Navigation -->
-    <nav class="site-nav" aria-label="Galvenā navigācija">
-    <a href="index.html" class="is-active">Sākums</a>
-    <a href="parskolu.html">Skola</a>
-    <a href="skoleniem.html">Skolēniem</a>
-    <a href="vecakiem.html">Vecākiem</a>
-    <a href="projekti.html">Projekti</a>
-    <a href="dokumentacija.html">Dokumenti</a>
-</nav>
-
-    <!-- Right: County logo -->
-    <a class="county" href="#" aria-label="Jelgavas novads">
-      <img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
-    </a>
-
-  </div>
-</header>
-
-<script>
-  // Mobile menu toggle (safe on pages where header exists)
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
-
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-</script>
-
-
+			<header class="site-header">
+				<div class="header-bar">
+					<a class="brand" href="index.html">
+						<img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
+						<div class="brand-text">
+							<div class="brand-name">Aizupes pamatskola</div>
+							<div class="brand-values">Cieņa • Atbildība • Drošība</div>
+						</div>
+					</a>
+					<button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
+						<span></span><span></span><span></span>
+					</button>
+					<nav class="site-nav" aria-label="Galvenā navigācija">
+						<a href="index.html" class="is-active">Sākums</a>
+						<a href="parskolu.html">Skola</a>
+						<a href="skoleniem.html">Skolēniem</a>
+						<a href="vecakiem.html">Vecākiem</a>
+						<a href="projekti.html">Projekti</a>
+						<a href="dokumentacija.html">Dokumenti</a>
+					</nav>
+					<a class="county" href="#" aria-label="Jelgavas novads">
+						<img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
+					</a>
+				</div>
+			</header>
+ 
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const toggle = document.querySelector('.nav-toggle');
+					const nav = document.querySelector('.site-nav');
+					if (!toggle || !nav) return;
+					toggle.addEventListener('click', () => {
+						if (nav.classList.contains('is-open')) {
+							nav.classList.add('is-closing');
+							toggle.setAttribute('aria-expanded', 'false');
+							setTimeout(() => {
+								nav.classList.remove('is-open');
+								nav.classList.remove('is-closing');
+							}, 300);
+						} else {
+							nav.classList.add('is-open');
+							toggle.setAttribute('aria-expanded', 'true');
+						}
+					});
+ 
+					/* Scale FB embed to fill its wrapper */
+					var FB_W = 500, FB_H = 900;
+					function scaleFb() {
+						var wrap  = document.querySelector('.fb-stretch-wrap');
+						var inner = document.querySelector('.fb-stretch-inner');
+						if (!wrap || !inner) return;
+						var scale = wrap.offsetWidth / FB_W;
+						inner.style.transform = 'scale(' + scale + ')';
+						inner.style.height = FB_H + 'px';
+						wrap.style.height = Math.ceil(FB_H * scale) + 'px';
+					}
+					scaleFb();
+					window.addEventListener('resize', scaleFb);
+				});
+			</script>
+ 
 			<!-- Banner -->
-				<div id="banner-wrapper">
-					<div class="container">
-
-						<div id="banner">
-							<h2>Cieņa • Atbildība • Drošība</h2>
-						</div>
-
+			<div id="banner-wrapper">
+				<div class="container">
+					<div id="banner">
+						<h2>Cieņa • Atbildība • Drošība</h2>
 					</div>
 				</div>
-
+			</div>
+ 
 			<!-- Main -->
-				<div id="main">
-					<div class="container">
-						<div class="row main-row">
+			<div id="main">
+				<div class="container">
+					<div class="row main-row">
+ 
+						<!-- Left: Facebook feed ~75% -->
+						<div class="col-9 col-12-medium">
+							<section>
+								<h2>Jaunumi</h2>
+								<div id="fb-root"></div>
+								<script async defer crossorigin="anonymous" src="https://connect.facebook.net/lv_LV/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
+								<div class="fb-stretch-wrap">
+									<div class="fb-stretch-inner">
+										<div class="fb-page"
+											data-href="https://www.facebook.com/aizupespamatskola?locale=lv_LV"
+											data-tabs="timeline"
+											data-width="500"
+											data-height="900"
+											data-small-header="false"
+											data-adapt-container-width="false"
+											data-hide-cover="false"
+											data-show-facepile="true">
+											<blockquote cite="https://www.facebook.com/aizupespamatskola?locale=lv_LV" class="fb-xfbml-parse-ignore">
+												<a href="https://www.facebook.com/aizupespamatskola?locale=lv_LV">Aizupes pamatskola</a>
+											</blockquote>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
 
-							<div class="col-6 col-12-medium">
+						<!-- Right: Date + quick links ~25% -->
+						<div class="col-3 col-12-medium">
 
-								<section>
-									<div id="fb-root"></div>
-									<script async defer crossorigin="anonymous" src="https://connect.facebook.net/lv_LV/sdk.js#xfbml=1&version=v24.0&appId=APP_ID"></script>
-									<h2>Jaunumi</h2>
-									<div class="fb-page" data-href="https://www.facebook.com/aizupespamatskola?locale=lv_LV" data-tabs="timeline" data-width="500" data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/aizupespamatskola?locale=lv_LV" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/aizupespamatskola?locale=lv_LV">Aizupes pamatskola</a></blockquote></div>
-								</section>
-
+							<!-- Date widget -->
+							<div class="date-widget" aria-label="Šodienas datums">
+								<div class="dw-year"    id="dw-year"></div>
+								<div class="dw-day"     id="dw-day"></div>
+								<div class="dw-month"   id="dw-month"></div>
+								<div class="dw-weekday" id="dw-weekday"></div>
 							</div>
-							<div class="col-6 col-12-medium">
+							<script>
+								(function() {
+									var months   = ["Janvāris","Februāris","Marts","Aprīlis","Maijs","Jūnijs","Jūlijs","Augusts","Septembris","Oktobris","Novembris","Decembris"];
+									var weekdays = ["Svētdiena","Pirmdiena","Otrdiena","Trešdiena","Ceturtdiena","Piektdiena","Sestdiena"];
+									var now = new Date();
+									document.getElementById('dw-year').textContent    = now.getFullYear();
+									document.getElementById('dw-day').textContent     = now.getDate();
+									document.getElementById('dw-month').textContent   = months[now.getMonth()];
+									document.getElementById('dw-weekday').textContent = weekdays[now.getDay()];
+								})();
+							</script>
 
-								<article class="blog-post">
-									<h2>Jaunākais raksts</h2>
-									<a href="raksts.html"><img src="images/pic6.jpg" alt="" class="top blog-post-image" /></a>
-									<h3>Aizupes pamatskolas mājaslapas raksta piemērs.</h3>
-									<p>Aizupes pamatskolas mājaslapa.</p>
-									<footer class="controls">
-										<a href="raksts.html" class="button">Turpināt lasīt</a>
-									</footer>
-								</article>
+							<!-- Quick links -->
+							<div class="quick-links">
+								<h2>Noderīgas saites</h2>
+								<div class="quick-links-grid">
 
+									<a class="quick-link-btn" href="https://my.e-klase.lv" target="_blank" rel="noopener noreferrer" title="E-klase">
+										<img src="images/e-klase.png" alt="E-klase" />
+									</a>
+
+									<a class="quick-link-btn" href="https://www.izm.gov.lv" target="_blank" rel="noopener noreferrer" title="Izglītības un zinātnes ministrija">
+										<img src="images/IZM_logo.png" alt="IZM" />
+									</a>
+
+									<a class="quick-link-btn" href="https://www.jelgavasnovads.lv/lv/pasvaldiba/izglitiba" target="_blank" rel="noopener noreferrer" title="Jelgavas novada Izglītības pārvalde">
+										<img src="images/jn_logo_sauklis_lv_liels.jpg" alt="Jelgavas novads Izglītības pārvalde" />
+									</a>
+
+									<a class="quick-link-btn" href="https://www.viaa.gov.lv" target="_blank" rel="noopener noreferrer" title="Valsts izglītības attīstības aģentūra">
+										<img src="images/logo_v_lv_2_0.png" alt="VIAA" />
+									</a>
+
+									<a class="quick-link-btn" href="https://www.uzdevumi.lv" target="_blank" rel="noopener noreferrer" title="Uzdevumi.lv">
+										<img src="images/Uzdevumi.lv_logo.png" alt="Uzdevumi.lv" />
+									</a>
+
+									<a class="quick-link-btn" href="https://www.jelgavasnovads.lv" target="_blank" rel="noopener noreferrer" title="Jelgavas novads">
+										<img src="images/jn_logo_sauklis_lv_liels.jpg" alt="Jelgavas novads" />
+									</a>
+
+								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
+			</div>
 
-					<!-- Footer -->
-				<div id="footer-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="row">
-    
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Saziņa</h2>
-            <p>
-                <strong>Aizupes pamatskola</strong><br>
-				Darba laiks: 08:00 - 16:00<br>
-                Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
-                E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
-            </p>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Svarīgas sadaļas</h2>
-            <ul class="style2"> 
-                <li><a href="uznemsana.html">Uzņemšana</a></li>
-                <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
-                <li><a href="biedriba.html">Biedrība</a></li>
-                <li><a href="vecakiem.html">Vecākiem</a></li>
-                <li><a href="darbinieki.html">Darbinieki</a></li>
-            </ul>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Adrese</h2>
-            <p>
-                Tušķi, Līvbērzes pag.,<br>
-				Jelgavas novads,<br>
-				LV-3003<br>
-            <a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
-			</p>
-        </section>
-    </div>
-
+			<!-- Footer -->
+			<div id="footer-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-12">
+							<div class="row">
+								<div class="col-4 col-12-medium">
+									<section>
+										<h2>Saziņa</h2>
+										<p>
+											<strong>Aizupes pamatskola</strong><br>
+											Darba laiks: 08:00 - 16:00<br>
+											Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
+											E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
+										</p>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section>
+										<h2>Svarīgas sadaļas</h2>
+										<ul class="style2">
+											<li><a href="uznemsana.html">Uzņemšana</a></li>
+											<li><a href="stundusaraksts.html">Stundu saraksts</a></li>
+											<li><a href="biedriba.html">Biedrība</a></li>
+											<li><a href="vecakiem.html">Vecākiem</a></li>
+											<li><a href="darbinieki.html">Darbinieki</a></li>
+										</ul>
+									</section>
+								</div>
+								<div class="col-4 col-12-medium">
+									<section>
+										<h2>Adrese</h2>
+										<p>
+											Tušķi, Līvbērzes pag.,<br>
+											Jelgavas novads,<br>
+											LV-3003<br>
+											<a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
+										</p>
+									</section>
+								</div>
 								<div id="copyright">
 									&copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
 								</div>
@@ -160,101 +301,15 @@
 					</div>
 				</div>
 			</div>
-						<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 
-<div id="wip-overlay" class="overlay">
-    <div class="popup-content">
-        <h2>🚧 Mājaslapa ir izstrādes procesā 🚧</h2>
-        <p>
-            Sveicināti! Lūdzu, ņemiet vērā, ka šī mājaslapa pašlaik tiek izstrādāta. 
-            Informācija var būt nepilnīga, un funkcijas var nedarboties kā paredzēts.
-        </p>
-        <p>
-            Paldies par Jūsu sapratni!
-        </p>
-        <button id="accept-btn" class="confirm-btn">Es Saprotu</button>
-    </div>
-</div>
+		</div>
 
-<style>
-    /* Covers the entire screen */
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999; /* Ensures it stays on top of everything */
-    }
-
-    /* The actual white box */
-    .popup-content {
-        background-color: white;
-        padding: 30px;
-        border-radius: 8px;
-        max-width: 500px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        font-family: Arial, sans-serif;
-    }
-
-    .popup-content h2 {
-        margin-top: 0;
-        color: #333;
-    }
-
-    .popup-content p {
-        color: #666;
-        line-height: 1.5;
-    }
-
-    /* The button styling */
-    .confirm-btn {
-        background-color: #007BFF;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 15px;
-        transition: background 0.3s;
-    }
-
-    .confirm-btn:hover {
-        background-color: #0056b3;
-    }
-</style>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const overlay = document.getElementById('wip-overlay');
-        const btn = document.getElementById('accept-btn');
-
-        // CHANGE: We now check 'sessionStorage' instead of 'localStorage'
-        if (sessionStorage.getItem('disclaimerAccepted') === 'true') {
-            overlay.style.display = 'none';
-        }
-
-        btn.addEventListener('click', function() {
-            overlay.style.display = 'none';
-            
-            // CHANGE: We save to 'sessionStorage'. 
-            // This survives a refresh, but is deleted when the tab closes.
-            sessionStorage.setItem('disclaimerAccepted', 'true'); 
-        });
-    });
-</script>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
