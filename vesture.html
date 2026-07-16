@@ -1,422 +1,418 @@
 <!DOCTYPE HTML>
 <!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Minimaxing by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Aizupes pamatskola</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<style>
-			.history-period {
-				background-color: #fdfdfd;
-				border: 1px solid #e0e0e0;
-				border-radius: 4px;
-				margin-bottom: 1.8em;
-				overflow: hidden;
-			}
+    <head>
+        <title>Aizupes pamatskola</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <style>
+            .history-period {
+                background-color: #fdfdfd;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+                margin-bottom: 1.8em;
+                overflow: hidden;
+            }
 
-			.history-period-header {
-				display: flex;
-				align-items: center;
-				gap: 1em;
-				padding: 1em 1.5em;
-				border-bottom: 1px solid #e0e0e0;
-			}
+            .history-period-header {
+                display: flex;
+                align-items: center;
+                gap: 1em;
+                padding: 1em 1.5em;
+                border-bottom: 1px solid #e0e0e0;
+            }
 
-			.history-period-years {
-				font-size: 1.15em;
-				font-weight: bold;
-				color: #fff;
-				background-color: #2E7D32;
-				padding: 0.3em 0.8em;
-				border-radius: 3px;
-				white-space: nowrap;
-				flex-shrink: 0;
-			}
+            .history-period-years {
+                font-size: 1.15em;
+                font-weight: bold;
+                color: #fff;
+                background-color: #2E7D32;
+                padding: 0.3em 0.8em;
+                border-radius: 3px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
 
-			.history-period-director {
-				font-size: 0.95em;
-				color: #555;
-			}
+            .history-period-director {
+                font-size: 0.95em;
+                color: #555;
+            }
 
-			.history-period-director strong {
-				color: #222;
-			}
+            .history-period-director strong {
+                color: #222;
+            }
 
-			.history-period-body {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 0;
-			}
+            .history-period-body {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0;
+            }
 
-			.history-period-text {
-				flex: 1 1 320px;
-				padding: 1.2em 1.5em;
-				line-height: 1.65;
-				font-size: 0.95em;
-				color: #333;
-			}
+            .history-period-text {
+                flex: 1 1 320px;
+                padding: 1.2em 1.5em;
+                line-height: 1.65;
+                font-size: 0.95em;
+                color: #333;
+            }
 
-			.history-period-text p {
-				margin-top: 0;
-				margin-bottom: 0.8em;
-			}
+            .history-period-text p {
+                margin-top: 0;
+                margin-bottom: 0.8em;
+            }
 
-			.history-period-text p:last-child {
-				margin-bottom: 0;
-			}
+            .history-period-text p:last-child {
+                margin-bottom: 0;
+            }
 
-			.history-period-img {
-				flex: 0 0 220px;
-				padding: 1.2em 1.5em 1.2em 0;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				justify-content: flex-start;
-			}
+            .history-period-img {
+                flex: 0 0 220px;
+                padding: 1.2em 1.5em 1.2em 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+            }
 
-			.history-period-img img {
-				width: 100%;
-				border-radius: 3px;
-				border: 1px solid #ddd;
-				display: block;
-			}
+            .history-period-img img {
+                width: 100%;
+                border-radius: 3px;
+                border: 1px solid #ddd;
+                display: block;
+            }
 
-			.history-period-img .img-caption {
-				font-size: 0.82em;
-				font-style: italic;
-				color: #777;
-				line-height: 1.3;
-				text-align: center;
-				margin-top: 0.5em;
-			}
+            .history-period-img .img-caption {
+                font-size: 0.82em;
+                font-style: italic;
+                color: #777;
+                line-height: 1.3;
+                text-align: center;
+                margin-top: 0.5em;
+            }
 
-			/* Accent stripe variants */
-			.history-period.accent-green { border-left: 5px solid #2E7D32; }
-			.history-period.accent-orange { border-left: 5px solid #F57C00; }
-			.history-period.accent-blue { border-left: 5px solid #0277BD; }
-			.history-period.accent-purple { border-left: 5px solid #6A1B9A; }
+            /* Accent stripe variants */
+            .history-period.accent-green { border-left: 5px solid #2E7D32; }
+            .history-period.accent-orange { border-left: 5px solid #F57C00; }
 
-			.history-period.accent-orange .history-period-years { background-color: #F57C00; }
-			.history-period.accent-blue .history-period-years { background-color: #0277BD; }
-			.history-period.accent-purple .history-period-years { background-color: #6A1B9A; }
+            .history-period.accent-orange .history-period-years { background-color: #F57C00; }
 
-			@media (max-width: 680px) {
-				.history-period-img {
-					flex: 1 1 100%;
-					padding: 0 1.5em 1.2em 1.5em;
-				}
-				.history-period-img img {
-					max-width: 240px;
-					margin: 0 auto;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<div id="page-wrapper">
+            @media (max-width: 680px) {
+                .history-period-img {
+                    flex: 1 1 100%;
+                    padding: 0 1.5em 1.2em 1.5em;
+                }
+                .history-period-img img {
+                    max-width: 240px;
+                    margin: 0 auto;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="page-wrapper">
 
-			<!-- Header -->
-			<header class="site-header">
-				<div class="header-bar">
-					<a class="brand" href="index.html">
-						<img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
-						<div class="brand-text">
-							<div class="brand-name">Aizupes pamatskola</div>
-							<div class="brand-values">Cieņa • Atbildība • Drošība</div>
-						</div>
-					</a>
-					<button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
-						<span></span><span></span><span></span>
-					</button>
-					<nav class="site-nav" aria-label="Galvenā navigācija">
-						<a href="index.html">Sākums</a>
-						<a href="parskolu.html">Skola</a>
-						<a href="skoleniem.html">Skolēniem</a>
-						<a href="vecakiem.html">Vecākiem</a>
-						<a href="projekti.html">Projekti</a>
-						<a href="dokumentacija.html">Dokumenti</a>
-					</nav>
-					<a class="county" href="#" aria-label="Jelgavas novads">
-						<img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
-					</a>
-				</div>
-			</header>
+            <!-- Header -->
+            <header class="site-header">
+                <div class="header-bar">
+                    <a class="brand" href="index.html">
+                        <img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
+                        <div class="brand-text">
+                            <div class="brand-name">Aizupes pamatskola</div>
+                            <div class="brand-values">Cieņa • Atbildība • Drošība</div>
+                        </div>
+                    </a>
+                    <button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <nav class="site-nav" aria-label="Galvenā navigācija">
+                        <a href="index.html">Sākums</a>
+                        <a href="parskolu.html">Skola</a>
+                        <a href="skoleniem.html">Skolēniem</a>
+                        <a href="vecakiem.html">Vecākiem</a>
+                        <a href="projekti.html">Projekti</a>
+                        <a href="dokumentacija.html">Dokumenti</a>
+                    </nav>
+                    <a class="county" href="#" aria-label="Jelgavas novads">
+                        <img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
+                    </a>
+                </div>
+            </header>
 
-			<script>
-				document.addEventListener('DOMContentLoaded', () => {
-					const toggle = document.querySelector('.nav-toggle');
-					const nav = document.querySelector('.site-nav');
-					if (!toggle || !nav) return;
-					toggle.addEventListener('click', () => {
-						if (nav.classList.contains('is-open')) {
-							nav.classList.add('is-closing');
-							toggle.setAttribute('aria-expanded', 'false');
-							setTimeout(() => {
-								nav.classList.remove('is-open');
-								nav.classList.remove('is-closing');
-							}, 300);
-						} else {
-							nav.classList.add('is-open');
-							toggle.setAttribute('aria-expanded', 'true');
-						}
-					});
-				});
-			</script>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const toggle = document.querySelector('.nav-toggle');
+                    const nav = document.querySelector('.site-nav');
+                    if (!toggle || !nav) return;
+                    toggle.addEventListener('click', () => {
+                        if (nav.classList.contains('is-open')) {
+                            nav.classList.add('is-closing');
+                            toggle.setAttribute('aria-expanded', 'false');
+                            setTimeout(() => {
+                                nav.classList.remove('is-open');
+                                nav.classList.remove('is-closing');
+                            }, 300);
+                        } else {
+                            nav.classList.add('is-open');
+                            toggle.setAttribute('aria-expanded', 'true');
+                        }
+                    });
+                });
+            </script>
 
-			<!-- Main -->
-			<div id="main">
-				<div class="container">
-					<div class="row main-row">
-						<div class="col-3 col-12-medium">
-							<section>
-								<h2>Svarīga informācija</h2>
-								<ul class="link-list">
-									<li><a href="darbinieki.html">Darbinieki</a></li>
-									<li><a href="atbalstapersonals.html">Atbalsta personāls</a></li>
-									<li><a href="vertibas.html">Vērtības</a></li>
-									<li><a href="uznemsana.html">Uzņemšana</a></li>
-									<li><a href="macibuprogrammas.html">Izglītības programmas</a></li>
-									<li><a href="ekoskola.html">Ekoskola</a></li>
-									<li><a href="biblioteka.html">Bibliotēka</a></li>
-									<li><a href="vesture.html" style="color: #2E7D32; border-left-color: #F57C00;">Vēsture</a></li>
-								</ul>
-							</section>
-						</div>
+            <!-- Main -->
+            <div id="main">
+                <div class="container">
+                    <div class="row main-row">
+                        <div class="col-3 col-12-medium">
+                            <section>
+                                <h2>Svarīga informācija</h2>
+                                <ul class="link-list">
+                                    <li><a href="darbinieki.html">Darbinieki</a></li>
+                                    <li><a href="atbalstapersonals.html">Atbalsta personāls</a></li>
+                                    <li><a href="vertibas.html">Vērtības</a></li>
+                                    <li><a href="uznemsana.html">Uzņemšana</a></li>
+                                    <li><a href="macibuprogrammas.html">Izglītības programmas</a></li>
+                                    <li><a href="ekoskola.html">Ekoskola</a></li>
+                                    <li><a href="biblioteka.html">Bibliotēka</a></li>
+                                    <li><a href="vesture.html" style="color: #2E7D32; border-left-color: #F57C00;">Vēsture</a></li>
+                                </ul>
+                            </section>
+                        </div>
 
-						<div class="col-8 col-12-medium imp-medium">
-							<section>
-								<h2>Aizupes pamatskolas vēsture</h2>
+                        <div class="col-8 col-12-medium imp-medium">
+                            <section>
+                                <h2>Aizupes pamatskolas vēsture</h2>
 
-								<p style="font-size: 1.05em; color: #555; margin-bottom: 2em; line-height: 1.6;">
-									No nelielas istabas ar 22 bērniem līdz modernai skolai ar vairāk nekā 250 skolēniem — deviņdesmit gadu garumā Aizupes pamatskola ir bijusi kopienas sirds Tušķu apkārtnē.
-								</p>
+                                <p style="font-size: 1.05em; color: #555; margin-bottom: 2em; line-height: 1.6;">
+                                    No nelielas istabas ar 22 bērniem līdz modernai skolai ar vairāk nekā 250 skolēniem — deviņdesmit gadu garumā Aizupes pamatskola ir bijusi kopienas sirds Tušķu apkārtnē.
+                                </p>
 
-								<!-- 1928–1946 -->
-								<div class="history-period accent-green">
-									<div class="history-period-header">
-										<span class="history-period-years">1928–1946</span>
-										<span class="history-period-director">Skolas dibinātājs un pirmais skolotājs: <strong>Fricis Jorniņš</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Skolas vēsture aizsākās 1928. gadā, kad Tušķu apkārtējo māju saimnieki sāka vākt ziedojumus skolas celtniecībai. Jelgavas apriņķa valde iniciatīvu atbalstīja, taču solīja segt tikai nelielu daļu no nepieciešamajiem līdzekļiem.</p>
-											<p>Pēc arhitekta Zēberga projekta 1929. gadā uzsākta ēkas celtniecība. Tā kā būvdarbi vilkās, <span class="history-fact">1930. gada 1. septembrī</span> skolotājs Fricis Jorniņš sapulcināja <span class="history-fact">22 bērnus</span> savā dzīvokļa lielākajā istabā — tā sākās mācības jaunajā četrgadīgajā pamatskolā.</p>
-											<p>1932. gadā skolu nosauca par <em>Svētes-Aizupes I pakāpes pamatskolu</em>. Tajā gadā jau darbojās 4 klases ar 35 skolēniem. Par palīgskolotāju sāka strādāt Vanda Kipere, kura 1934. gadā kļuva par nākamo direktori.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture1.jpg" alt="Aizupes skolas ēka tās pirmsākumos ap 1930. gadu" />
-											<div class="img-caption">Aizupes skolas ēka tās pirmsākumos ap 1930. gadu.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 1928–1934 -->
+                                <div class="history-period accent-green">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1928–1934</span>
+                                        <span class="history-period-director">Skolas dibinātājs un pirmais skolotājs: <strong>Fricis Jorniņš</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Skolas vēsture aizsākās 1928. gadā, kad Tušķu apkārtējo māju saimnieki sāka vākt ziedojumus skolas celtniecībai. Jelgavas apriņķa valde iniciatīvu atbalstīja, taču solīja segt tikai nelielu daļu no nepieciešamajiem līdzekļiem.</p>
+                                            <p>Pēc arhitekta Zēberga projekta 1929. gadā uzsākta ēkas celtniecība. Tā kā būvdarbi vilkās, <span class="history-fact">1930. gada 1. septembrī</span> skolotājs Fricis Jorniņš sapulcināja <span class="history-fact">22 bērnus</span> savā dzīvokļa lielākajā istabā — tā sākās mācības jaunajā četrgadīgajā pamatskolā.</p>
+                                            <p>1932. gadā skolu nosauca par <em>Svētes-Aizupes I pakāpes pamatskolu</em>. Tajā gadā jau darbojās 4 klases ar 35 skolēniem. Par palīgskolotāju sāka strādāt Vanda Kipere, kura 1934. gadā kļuva par nākamo direktori.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture1.jpg" alt="Aizupes skolas ēka tās pirmsākumos ap 1930. gadu" />
+                                            <div class="img-caption">Aizupes skolas ēka tās pirmsākumos ap 1930. gadu.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 1934–1953 -->
-								<div class="history-period accent-orange">
-									<div class="history-period-header">
-										<span class="history-period-years">1934–1953</span>
-										<span class="history-period-director">Direktore: <strong>Vanda Kipere</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Vanda Kipere vadīja skolu gandrīz divus gadu desmitus. <span class="history-fact">1947./48. m. g.</span> skolu beidza pirmais 7-gadīgās skolas izlaidums — 13 skolēni. Skolā strādāja 6 skolotāji.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture3.jpg" alt="Aizupes skola 1940. gados" />
-											<div class="img-caption">Aizupes skola Vandas Kiperes vadības laikā.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 1934–1953 -->
+                                <div class="history-period accent-orange">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1934–1953</span>
+                                        <span class="history-period-director">Direktore: <strong>Vanda Kipere</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Vanda Kipere vadīja skolu gandrīz divus gadu desmitus. <span class="history-fact">1947./48. m. g.</span> skolu beidza pirmais 7-gadīgās skolas izlaidums — 13 skolēni. Skolā strādāja 6 skolotāji.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture3.jpg" alt="Aizupes skola 1940. gados" />
+                                            <div class="img-caption">Aizupes skola Vandas Kiperes vadības laikā.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 1953–1957 -->
-								<div class="history-period accent-blue">
-									<div class="history-period-header">
-										<span class="history-period-years">1953–1957</span>
-										<span class="history-period-director">Direktori: <strong>skolotāja Ejupe, V. Fadejevs, H. Mirska</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>No 1953. gada skolu īsi vadīja skolotāja Ejupe, ar otro pusgadu — V. Fadejevs (direktors līdz 1957. gadam). Skolā darbojās pionieru un oktobrēnu grupas, kolektīvs piedalījās ražas novākšanas talkās. 1955.–1957. g. par skolas mācību pārzini strādāja H. Mirska.</p>
-										</div>
-									</div>
-								</div>
+                                <!-- 1953–1957 -->
+                                <div class="history-period accent-green">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1953–1957</span>
+                                        <span class="history-period-director">Direktori: <strong>skolotāja Ejupe, V. Fadejevs</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>No 1953. gada skolu īsi vadīja skolotāja Ejupe, ar otro pusgadu — V. Fadejevs (direktors līdz 1957. gadam). Skolā darbojās pionieru un oktobrēnu grupas, kolektīvs piedalījās ražas novākšanas talkās. 1955.–1957. g. par skolas mācību pārzini strādāja H. Mirska.</p>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 1957–1982 -->
-								<div class="history-period accent-green">
-									<div class="history-period-header">
-										<span class="history-period-years">1957–1982</span>
-										<span class="history-period-director">Direktore: <strong>Mirdza Blūma</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p><span class="history-fact">1961. gadā</span> sākās ēkas piebūves celtniecība un vecās ēkas rekonstrukcija. Tajā pašā gadā pirmo reizi mācījās 8. klase ar 17 bērniem — skolēni un skolotāji aktīvi piedalījās būvdarbos.</p>
-											<p>Ar <span class="history-fact">1963./64. m. g.</span> 150–160 skolēni jau mācījās jaunajā ēkā. Skolai tika pasniegts skolas karogs. Veiksmīgi darbojās deju kolektīvs un dramatiskais kolektīvs.</p>
-											<p>No 1971./72. m. g. par mācību daļas vadītāju strādāja L. Šulmane. Skola pārgāja uz kabinetu sistēmu, un tās metodiskais kabinets kļuva par labāko rajonā. Darbojās zīmēšanas, aušanas, literārās jaunrades un citi pulciņi.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture4.jpg" alt="Aizupes skolas ēka pēc rekonstrukcijas" />
-											<div class="img-caption">Skolas ēka pēc piebūves un rekonstrukcijas 1960. gados.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 1957–1982 -->
+                                <div class="history-period accent-orange">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1957–1982</span>
+                                        <span class="history-period-director">Direktore: <strong>Mirdza Blūma</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p><span class="history-fact">1961. gadā</span> sākās ēkas piebūves celtniecība un vecās ēkas rekonstrukcija. Tajā pašā gadā pirmo reizi mācījās 8. klase ar 17 bērniem — skolēni un skolotāji aktīvi piedalījās būvdarbos.</p>
+                                            <p>Ar <span class="history-fact">1963./64. m. g.</span> 150–160 skolēni jau mācījās jaunajā ēkā. Skolai tika pasniegts skolas karogs. Veiksmīgi darbojās deju kolektīvs un dramatiskais kolektīvs.</p>
+                                            <p>No 1971./72. m. g. par mācību daļas vadītāju strādāja L. Šulmane. Skola pārgāja uz kabinetu sistēmu, un tās metodiskais kabinets kļuva par labāko rajonā. Darbojās zīmēšanas, aušanas, literārās jaunrades un citi pulciņi.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture4.jpg" alt="Aizupes skolas ēka pēc rekonstrukcijas" />
+                                            <div class="img-caption">Skolas ēka pēc piebūves un rekonstrukcijas 1960. gados.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 1982–1999 -->
-								<div class="history-period accent-orange">
-									<div class="history-period-header">
-										<span class="history-period-years">1982–1999</span>
-										<span class="history-period-director">Direktore: <strong>Vera Juhņēviča</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Skola bija viena no pirmajām Jelgavas rajonā, kas pārgāja uz 40 minūšu mācību stundu, 10 ballu vērtēšanas sistēmu un ieviesa ieskaišu sistēmu. Skolai bija labi sasniegumi rajona olimpiādēs.</p>
-											<p><span class="history-fact">1992. gadā</span> skolā mācījās 249 skolēni un strādāja 25 skolotāji; darbojās 11 pulciņi un fakultatīvi.</p>
-											<p><span class="history-fact">1995. gadā</span>, par godu skolas 65 gadu jubilejai, dzejniece Dina Bitēna Sirmā un komponists Atvars Sirmais uzrakstīja Aizupes pamatskolas himnu.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture5.jpg" alt="Aizupes pamatskola 1980.–90. gados" />
-											<div class="img-caption">Aizupes vēsturiskā skolas ēka.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 1982–1999 -->
+                                <div class="history-period accent-green">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1982–1999</span>
+                                        <span class="history-period-director">Direktore: <strong>Vera Juhņēviča</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Skola bija viena no pirmajām Jelgavas rajonā, kas pārgāja uz 40 minūšu mācību stundu, 10 ballu vērtēšanas sistēmu un ieviesa ieskaišu sistēmu. Skolai bija labi sasniegumi rajona olimpiādēs.</p>
+                                            <p><span class="history-fact">1992. gadā</span> skolā mācījās 249 skolēni un strādāja 25 skolotāji; darbojās 11 pulciņi un fakultatīvi.</p>
+                                            <p><span class="history-fact">1995. gadā</span>, par godu skolas 65 gadu jubilejai, dzejniece Dina Bitēna Sirmā un komponists Atvars Sirmais uzrakstīja Aizupes pamatskolas himnu.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture5.jpg" alt="Aizupes pamatskola 1980.–90. gados" />
+                                            <div class="img-caption">Aizupes vēsturiskā skolas ēka.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 1999–2008 -->
-								<div class="history-period accent-blue">
-									<div class="history-period-header">
-										<span class="history-period-years">1999–2008</span>
-										<span class="history-period-director">Direktore: <strong>Klāra Stepanova</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Daudz darīts skolas un tās teritorijas labiekārtošanā: nomainīta zāles grīda, ielikti jauni logi, izveidotas divas datorklases, ierīkotas ģērbtuves ar dušām, ierīkots futbola laukums un rotaļu laukums mazākajiem. Skolas pagalms ieguva jaunu seju: zāliens, bruģēti celiņi, strūklaka "Staburags".</p>
-											<p>Par tradīciju kļuva 9. klašu Žetona vakars. Akreditācijā slavēja vadītāja un skolotāju darbu un sadarbību ar vecākiem.</p>
-											<p><span class="history-fact">2007. gadā</span> par īpašiem panākumiem vides izglītībā Aizupes pamatskola ieguva starptautisko <strong>Ekoskolas nosaukumu un Zaļo karogu</strong>. Toreizējais vides ministrs Raimonds Vējonis viesojās skolā un pacēla karogu.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture7.jpg" alt="Aizupes skolas ēkas piebūve 1962./63. gadā" />
-											<div class="img-caption">Skolas ēkas piebūve 1962./63. gadā.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 1999–2008 -->
+                                <div class="history-period accent-orange">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">1999–2008</span>
+                                        <span class="history-period-director">Direktore: <strong>Klāra Stepanova</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Daudz darīts skolas un tās teritorijas labiekārtošanā: nomainīta zāles grīda, ielikti jauni logi, izveidotas divas datorklases, ierīkotas ģērbtuves ar dušām, ierīkots futbola laukums un rotaļu laukums mazākajiem. Skolas pagalms ieguva jaunu seju: zāliens, bruģēti celiņi, strūklaka "Staburags".</p>
+                                            <p>Par tradīciju kļuva 9. klašu Žetona vakars. Akreditācijā slavēja vadītāja un skolotāju darbu un sadarbību ar vecākiem.</p>
+                                            <p><span class="history-fact">2007. gadā</span> par īpašiem panākumiem vides izglītībā Aizupes pamatskola ieguva starptautisko <strong>Ekoskolas nosaukumu un Zaļo karogu</strong>. Toreizējais vides ministrs Raimonds Vējonis viesojās skolā un pacēla karogu.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture7.jpg" alt="Aizupes skolas ēkas piebūve 1962./63. gadā" />
+                                            <div class="img-caption">Skolas ēkas piebūve 1962./63. gadā.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 2008–2010 -->
-								<div class="history-period accent-purple">
-									<div class="history-period-header">
-										<span class="history-period-years">2008–2010</span>
-										<span class="history-period-director">Direktore: <strong>Inga Jansone</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Darbu sāka mācību pārzine Dace Hercberga. Skolas teritorijā tika īstenots apgaismojuma projekts. Skolā viesojās Renārs Kaupers.</p>
-											<p><span class="history-fact">2010./11. m. g.</span> skolā mācījās 225 skolēni un strādāja 21 pedagogs, kurus atbalstīja 10 tehniskie darbinieki.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture8.jpg" alt="Aizupes skola 2008.–2010. gadā" />
-											<div class="img-caption">Skolas ēka Ingas Jansones vadības laikā.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 2008–2010 -->
+                                <div class="history-period accent-green">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">2008–2010</span>
+                                        <span class="history-period-director">Direktore: <strong>Inga Jansone</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Darbu sāka mācību pārzine Dace Hercberga. Skolas teritorijā tika īstenots apgaismojuma projekts. Skolā viesojās Renārs Kaupers.</p>
+                                            <p><span class="history-fact">2010./11. m. g.</span> skolā mācījās 225 skolēni un strādāja 21 pedagogs, kurus atbalstīja 10 tehniskie darbinieki.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture8.jpg" alt="Aizupes skola 2008.–2010. gadā" />
+                                            <div class="img-caption">Skolas ēka Ingas Jansones vadības laikā.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 2011–2021 -->
-								<div class="history-period accent-green">
-									<div class="history-period-header">
-										<span class="history-period-years">2011–2021</span>
-										<span class="history-period-director">Direktore: <strong>Zane Lange</strong> (2016–2018 pienākumus pildīja Ināra Eliņa)</span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Skola turpināja aktīvi iesaistīties starptautiskā sadarbībā, piedaloties dažādos projektos. <span class="history-fact">2014. gadā</span> notika skolas ēkas plaša renovācija.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture9.jpg" alt="Aizupes skolas ēkas renovācija 2014. gadā" />
-											<div class="img-caption">Skolas ēkas renovācija 2014. gadā.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 2011–2021 -->
+                                <div class="history-period accent-orange">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">2011–2021</span>
+                                        <span class="history-period-director">Direktore: <strong>Zane Lange</strong> (2016–2018 pienākumus pildīja Ināra Eliņa)</span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Skola turpināja aktīvi iesaistīties starptautiskā sadarbībā, piedaloties dažādos projektos. <span class="history-fact">2014. gadā</span> notika skolas ēkas plaša renovācija.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture9.jpg" alt="Aizupes skolas ēkas renovācija 2014. gadā" />
+                                            <div class="img-caption">Skolas ēkas renovācija 2014. gadā.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-								<!-- 2022–Mūsdienas -->
-								<div class="history-period accent-orange">
-									<div class="history-period-header">
-										<span class="history-period-years">2022–šodien</span>
-										<span class="history-period-director">Direktore: <strong>Amanda Siliņa</strong></span>
-									</div>
-									<div class="history-period-body">
-										<div class="history-period-text">
-											<p>Aizupes pamatskola turpina attīstīties metodiskajā darbā un pilnveidot mācību vidi. Tika izstrādāta kārtība skolēnu uzņemšanai 1. klasē.</p>
-											<p><span class="history-fact">2024./25. m. g.</span> skolu uzsāka 242 skolēni, bet <span class="history-fact">2025./26. m. g.</span> — jau 255 skolēni un 47 darbinieki.</p>
-										</div>
-										<div class="history-period-img">
-											<img src="images/Picture10.jpg" alt="Aizupes pamatskola mūsdienās" />
-											<div class="img-caption">Aizupes pamatskola pēc renovācijas.</div>
-										</div>
-									</div>
-								</div>
+                                <!-- 2022–Mūsdienas -->
+                                <div class="history-period accent-green">
+                                    <div class="history-period-header">
+                                        <span class="history-period-years">2022–šodien</span>
+                                        <span class="history-period-director">Direktore: <strong>Amanda Siliņa</strong></span>
+                                    </div>
+                                    <div class="history-period-body">
+                                        <div class="history-period-text">
+                                            <p>Aizupes pamatskola turpina attīstīties metodiskajā darbā un pilnveidot mācību vidi. Tika izstrādāta kārtība skolēnu uzņemšanai 1. klasē.</p>
+                                            <p><span class="history-fact">2024./25. m. g.</span> skolu uzsāka 242 skolēni, bet <span class="history-fact">2025./26. m. g.</span> — jau 255 skolēni un 47 darbinieki.</p>
+                                        </div>
+                                        <div class="history-period-img">
+                                            <img src="images/Picture10.jpg" alt="Aizupes pamatskola mūsdienās" />
+                                            <div class="img-caption">Aizupes pamatskola pēc renovācijas.</div>
+                                        </div>
+                                    </div>
+                                </div>
 
-							</section>
-						</div>
-					</div>
-				</div>
-			</div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-			<!-- Footer -->
-			<div id="footer-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="col-12">
-							<div class="row">
-								<div class="col-4 col-12-medium">
-									<section>
-										<h2>Saziņa</h2>
-										<p>
-											<strong>Aizupes pamatskola</strong><br>
-											Darba laiks: 08:00 - 16:00<br>
-											Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
-											E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
-										</p>
-									</section>
-								</div>
-								<div class="col-4 col-12-medium">
-									<section>
-										<h2>Svarīgas sadaļas</h2>
-										<ul class="style2">
-											<li><a href="uznemsana.html">Uzņemšana</a></li>
-											<li><a href="stundusaraksts.html">Stundu saraksts</a></li>
-											<li><a href="biedriba.html">Biedrība</a></li>
-											<li><a href="vecakiem.html">Vecākiem</a></li>
-											<li><a href="darbinieki.html">Darbinieki</a></li>
-										</ul>
-									</section>
-								</div>
-								<div class="col-4 col-12-medium">
-									<section>
-										<h2>Adrese</h2>
-										<p>
-											Tušķi, Līvbērzes pag.,<br>
-											Jelgavas novads,<br>
-											LV-3003<br>
-											<a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
-										</p>
-									</section>
-								</div>
-								<div id="copyright">
-									&copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+            <!-- Footer -->
+            <div id="footer-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-4 col-12-medium">
+                                    <section>
+                                        <h2>Saziņa</h2>
+                                        <p>
+                                            <strong>Aizupes pamatskola</strong><br>
+                                            Darba laiks: 08:00 - 16:00<br>
+                                            Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
+                                            E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-4 col-12-medium">
+                                    <section>
+                                        <h2>Svarīgas sadaļas</h2>
+                                        <ul class="style2">
+                                            <li><a href="uznemsana.html">Uzņemšana</a></li>
+                                            <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
+                                            <li><a href="biedriba.html">Biedrība</a></li>
+                                            <li><a href="vecakiem.html">Vecākiem</a></li>
+                                            <li><a href="darbinieki.html">Darbinieki</a></li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                <div class="col-4 col-12-medium">
+                                    <section>
+                                        <h2>Adrese</h2>
+                                        <p>
+                                            Tušķi, Līvbērzes pag.,<br>
+                                            Jelgavas novads,<br>
+                                            LV-3003<br>
+                                            <a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
+                                        </p>
+                                    </section>
+                                </div>
+                                <div id="copyright">
+                                    &copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-		<script src="assets/js/vesture_gadi.js"></script>
-	</body>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/vesture_gadi.js"></script>
+    </body>
 </html>
