@@ -11,12 +11,12 @@
 						<span></span><span></span><span></span>
 					</button>
 					<nav class="site-nav" aria-label="Galvenā navigācija">
-						<a href="index.html" class="is-active">Sākums</a>
-						<a href="parskolu.html">Skola</a>
-						<a href="skoleniem.html">Skolēniem</a>
-						<a href="vecakiem.html">Vecākiem</a>
-						<a href="projekti.html">Projekti</a>
-						<a href="dokumentacija.html">Dokumenti</a>
+						<a href="index.html" {% if page.section == 'home' %}class="is-active"{% endif %}>Sākums</a>
+						<a href="parskolu.html" {% if page.section == 'school' %}class="is-active"{% endif %}>Skola</a>
+						<a href="skoleniem.html" {% if page.section == 'students' %}class="is-active"{% endif %}>Skolēniem</a>
+						<a href="vecakiem.html" {% if page.section == 'parents' %}class="is-active"{% endif %}>Vecākiem</a>
+						<a href="projekti.html" {% if page.section == 'projects' %}class="is-active"{% endif %}>Projekti</a>
+						<a href="dokumentacija.html" {% if page.section == 'documents' %}class="is-active"{% endif %}>Dokumenti</a>
 					</nav>
 					<a class="county" href="#" aria-label="Jelgavas novads">
 						<img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
