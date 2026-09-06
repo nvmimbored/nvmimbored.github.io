@@ -1,0 +1,36 @@
+.jadara-content { color: #444; line-height: 1.7; overflow-wrap: anywhere; }
+.jadara-content h1 { color: #6c4693; font-size: 2em; line-height: 1.2; margin-bottom: .6em; }
+.jadara-content h2 { color: #6c4693; font-size: 1.4em; margin: 1.4em 0 .65em; }
+.jadara-content h3 { color: #51346e; }
+.jadara-intro { display: flex; align-items: center; gap: 1.5em; padding: 1.5em; margin-bottom: 2em; background: #f5f0f9; border-left: 5px solid #d5e13b; border-radius: 4px; }
+.jadara-intro > div { flex: 1; min-width: 0; }
+.jadara-content .jadara-eyebrow { font-size: .85em; font-weight: 700; color: #6c4693; margin-bottom: .65em; }
+.jadara-content .jadara-period { color: #51346e; font-weight: 700; }
+.jadara-logo { width: 180px; max-width: 100%; height: auto; flex-shrink: 0; border-radius: 4px; }
+.jadara-panel { background: #f5f0f9; border-left: 5px solid #6c4693; border-radius: 4px; padding: 1.5em; margin: 1.5em 0; }
+.jadara-panel h2 { margin-top: 0; }
+.jadara-panel p:last-child, .jadara-intro p:last-child { margin-bottom: 0; }
+.jadara-list { list-style: disc; padding-left: 1.4em; }
+.jadara-list li { padding-left: .2em; margin-bottom: .65em; }
+.jadara-list li::marker { color: #6c4693; }
+.jadara-note { background: #f7f9dd; border-left: 5px solid #d5e13b; padding: 1em 1.2em; border-radius: 4px; }
+.jadara-content .jadara-button { display: inline-block; background: #6c4693; color: #fff; padding: .7em 1.2em; border-radius: 4px; font-weight: 700; text-decoration: none; line-height: 1.5; }
+.jadara-content .jadara-button:hover { background: #51346e; }
+.jadara-content a:focus-visible { outline: 3px solid #6c4693; outline-offset: 4px; }
+.jadara-content .jadara-back { color: #6c4693; }
+.jadara-funding { margin-top: 2em; padding-top: .5em; border-top: 1px solid #ded4e8; }
+.jadara-funding img { display: block; width: 100%; max-width: 858px; height: auto; background: white; }
+ul.link-list li a.jadara-current { color: #2E7D32; border-left-color: #F57C00; }
+@media (max-width: 600px) {
+  .jadara-intro { flex-direction: column; align-items: flex-start; }
+  .jadara-logo { width: 140px; align-self: center; }
+  .jadara-content h1 { font-size: 1.7em; }
+  .jadara-panel, .jadara-intro { padding: 1.1em; }
+}
+
+.jadara-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5em; margin: 1.5em 0 2em; }
+.jadara-gallery figure { margin: 0; min-width: 0; }
+.jadara-gallery a { display: block; border-radius: 4px; background: #f5f0f9; }
+.jadara-gallery img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.jadara-gallery figcaption { padding-top: .6em; font-size: .9em; line-height: 1.5; color: #51346e; }
+@media (max-width: 600px) { .jadara-gallery { grid-template-columns: 1fr; } }
