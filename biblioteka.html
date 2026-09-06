@@ -1,106 +1,14 @@
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aizupes pamatskola</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		<div id="page-wrapper">
-
-			<!-- Header -->
-				<header class="site-header">
-  <div class="header-bar">
-
-    <!-- Left: School identity -->
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
-      <div class="brand-text">
-        <div class="brand-name">Aizupes pamatskola</div>
-        <div class="brand-values">Cieņa • Atbildība • Drošība</div>
-      </div>
-    </a>
-
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Center: Navigation -->
-    <nav class="site-nav" aria-label="Galvenā navigācija">
-    	<a href="index.html">Sākums</a>
-    	<a href="parskolu.html">Skola</a>
-    	<a href="skoleniem.html">Skolēniem</a>
-    	<a href="vecakiem.html">Vecākiem</a>
-    	<a href="projekti.html">Projekti</a>
-    	<a href="dokumentacija.html">Dokumenti</a>
-	</nav>
-
-    <!-- Right: County logo -->
-    <a class="county" href="#" aria-label="Jelgavas novads">
-      <img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
-    </a>
-
-  </div>
-</header>
-
-<script>
-  // Advanced Mobile menu toggle with smooth close animation
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
-
-    toggle.addEventListener('click', () => {
-      // If the menu is CURRENTLY open...
-      if (nav.classList.contains('is-open')) {
-        
-        // 1. Add the closing animation class
-        nav.classList.add('is-closing');
-        toggle.setAttribute('aria-expanded', 'false'); // Morphs the X back to hamburger
-        
-        // 2. Wait exactly 300 milliseconds (the length of our CSS animation)
-        setTimeout(() => {
-          // 3. AFTER the animation finishes, actually hide the menu
-          nav.classList.remove('is-open');
-          nav.classList.remove('is-closing');
-        }, 300);
-
-      } else {
-        // If the menu is closed, just open it normally!
-        nav.classList.add('is-open');
-        toggle.setAttribute('aria-expanded', 'true'); // Morphs the hamburger to X
-      }
-    });
-  });
-</script>
-
+---
+layout: default
+title: Bibliotēka
+section: school
+---
 			<!-- Main -->
 				<div id="main">
 					<div class="container">
 						<div class="row main-row">
 							<div class="col-3 col-12-medium">
-
-								<section>
-									<h2>Svarīga informācija</h2>
-									<ul class="link-list">
-										<li><a href="darbinieki.html">Darbinieki </a></li>
-										<li><a href="atbalstapersonals.html">Atbalsta personāls</a></li>
-										<li><a href="vertibas.html">Vērtības</a></li>
-										<li><a href="uznemsana.html">Uzņemšana</a></li>
-										<li><a href="macibuprogrammas.html">Izglītības programmas</a></li>
-										<li><a href="ekoskola.html">Ekoskola</a></li>
-										<li><a href="biblioteka.html" style="color: #2E7D32; border-left-color: #F57C00;">Bibliotēka</a></li>
-										<li><a href="vesture.html">Vēsture</a></li>
-									</ul>
-								</section>
-
+								{% include sidebar-school.html %}
 							</div>
 							<div class="col-8 col-12-medium imp-medium">
 
@@ -113,66 +21,3 @@
 						</div>
 					</div>
 				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="row">
-    
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Saziņa</h2>
-            <p>
-                <strong>Aizupes pamatskola</strong><br>
-				Darba laiks: 08:00 - 16:00<br>
-                Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
-                E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
-            </p>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Svarīgas sadaļas</h2>
-            <ul class="style2"> 
-                <li><a href="uznemsana.html">Uzņemšana</a></li>
-                <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
-                <li><a href="biedriba.html">Biedrība</a></li>
-                <li><a href="vecakiem.html">Vecākiem</a></li>
-                <li><a href="darbinieki.html">Darbinieki</a></li>
-            </ul>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Adrese</h2>
-            <p>
-                Tušķi, Līvbērzes pag.,<br>
-				Jelgavas novads,<br>
-				LV-3003<br>
-            <a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
-			</p>
-        </section>
-    </div>
-
-								<div id="copyright">
-									&copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>

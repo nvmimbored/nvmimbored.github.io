@@ -1,0 +1,20 @@
+<section>
+  <h2>Svarīga informācija</h2>
+  <ul class="link-list">
+    {% assign school_links = "darbinieki.html|Darbinieki,atbalstapersonals.html|Atbalsta personāls,vertibas.html|Vērtības,uznemsana.html|Uzņemšana,macibuprogrammas.html|Izglītības programmas,ekoskola.html|Ekoskola,biblioteka.html|Bibliotēka,vesture.html|Vēsture" | split: "," %}
+
+    {% for item in school_links %}
+      {% assign link = item | split: "|" %}
+      {% assign link_url = link[0] | prepend: "/" %}
+      <li>
+        <a href="{{ link_url | relative_url }}"
+           {% if page.url == link_url %}
+             aria-current="page"
+             style="color: #2E7D32; border-left-color: #F57C00;"
+           {% endif %}>
+          {{ link[1] }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
