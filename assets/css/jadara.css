@@ -27,3 +27,10 @@ ul.link-list li a.jadara-current { color: #6c4693; border-left-color: #d5e13b; }
   .jadara-content h1 { font-size: 1.7em; }
   .jadara-panel, .jadara-intro { padding: 1.1em; }
 }
+
+.jadara-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5em; margin: 1.5em 0 2em; }
+.jadara-gallery figure { margin: 0; min-width: 0; }
+.jadara-gallery a { display: block; border-radius: 4px; background: #f5f0f9; }
+.jadara-gallery img { display: block; width: 100%; height: auto; border-radius: 4px; }
+.jadara-gallery figcaption { padding-top: .6em; font-size: .9em; line-height: 1.5; color: #51346e; }
+@media (max-width: 600px) { .jadara-gallery { grid-template-columns: 1fr; } }
