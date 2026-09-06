@@ -16,3 +16,9 @@ jobs:
 
       - name: Build website
         uses: actions/jekyll-build-pages@v1
+
+      - name: Save website preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-preview
+          path: _site/
