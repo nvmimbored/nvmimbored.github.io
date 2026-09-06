@@ -20,7 +20,7 @@
 .jadara-content .jadara-back { color: #6c4693; }
 .jadara-funding { margin-top: 2em; padding-top: .5em; border-top: 1px solid #ded4e8; }
 .jadara-funding img { display: block; width: 100%; max-width: 858px; height: auto; background: white; }
-ul.link-list li a.jadara-current { color: #6c4693; border-left-color: #d5e13b; }
+ul.link-list li a.jadara-current { color: #2E7D32; border-left-color: #F57C00; }
 @media (max-width: 600px) {
   .jadara-intro { flex-direction: column; align-items: flex-start; }
   .jadara-logo { width: 140px; align-self: center; }
