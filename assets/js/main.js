@@ -49,3 +49,14 @@
 				});
 
 })(jQuery);
+
+// Load shared accessibility behavior on legacy standalone pages.
+(function() {
+	var existing = document.querySelector('script[data-accessibility-enhancements]');
+	if (existing) return;
+
+	var script = document.createElement('script');
+	script.src = 'assets/js/accessibility.js';
+	script.dataset.accessibilityEnhancements = 'true';
+	document.head.appendChild(script);
+})();
