@@ -7,10 +7,10 @@
 							<div class="brand-values">Cieņa • Atbildība • Drošība</div>
 						</div>
 					</a>
-					<button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
+					<button class="nav-toggle" type="button" aria-label="Atvērt izvēlni" aria-expanded="false" aria-controls="primary-navigation">
 						<span></span><span></span><span></span>
 					</button>
-					<nav class="site-nav" aria-label="Galvenā navigācija">
+					<nav class="site-nav" id="primary-navigation" aria-label="Galvenā navigācija">
 						<a href="index.html" {% if page.section == 'home' %}class="is-active"{% endif %}>Sākums</a>
 						<a href="parskolu.html" {% if page.section == 'school' %}class="is-active"{% endif %}>Skola</a>
 						<a href="skoleniem.html" {% if page.section == 'students' %}class="is-active"{% endif %}>Skolēniem</a>
@@ -18,7 +18,7 @@
 						<a href="projekti.html" {% if page.section == 'projects' %}class="is-active"{% endif %}>Projekti</a>
 						<a href="dokumentacija.html" {% if page.section == 'documents' %}class="is-active"{% endif %}>Dokumenti</a>
 					</nav>
-					<a class="county" href="#" aria-label="Jelgavas novads">
+					<a class="county" href="https://www.jelgavasnovads.lv/" aria-label="Jelgavas novada tīmekļvietne">
 						<img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
 					</a>
 				</div>
