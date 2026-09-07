@@ -1,3 +1,13 @@
+// Load accessibility behavior before the legacy template code can fail.
+(function() {
+	if (document.querySelector('script[src*="assets/js/accessibility.js"]')) return;
+
+	var script = document.createElement('script');
+	script.src = 'assets/js/accessibility.js?v=2';
+	script.dataset.accessibilityEnhancements = 'true';
+	document.head.appendChild(script);
+})();
+
 /*
 	Minimaxing by HTML5 UP
 	html5up.net | @ajlkn
@@ -49,14 +59,3 @@
 				});
 
 })(jQuery);
-
-// Load shared accessibility behavior on legacy standalone pages.
-(function() {
-	var existing = document.querySelector('script[data-accessibility-enhancements]');
-	if (existing) return;
-
-	var script = document.createElement('script');
-	script.src = 'assets/js/accessibility.js';
-	script.dataset.accessibilityEnhancements = 'true';
-	document.head.appendChild(script);
-})();

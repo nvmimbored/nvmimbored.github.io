@@ -2536,9 +2536,45 @@ a:focus-visible, button:focus-visible, details:focus-visible {
 }
 
 @media screen and (max-width: 980px) {
+	/* Use nearly the full screen width throughout the mobile layout. */
+	.container {
+		width: calc(100% - 16px);
+	}
+
+	#main {
+		padding: 20px 0;
+	}
+
+	#main > .container,
+	#main > .docs {
+		padding: 1rem;
+		border-radius: 8px;
+	}
+
+	#banner-wrapper {
+		padding: 12px 0;
+	}
+
+	#banner {
+		padding: 2.5rem 0.75rem;
+	}
+
+	#footer-wrapper {
+		padding: 1.25rem 0;
+	}
+
+	.row {
+		margin-top: -1rem;
+		margin-left: -1rem;
+	}
+
+	.row > * {
+		padding: 1rem 0 0 1rem;
+	}
+
 	/*
-	 * Keep the visual order identical to the document order:
-	 * section navigation, main content, supplementary content.
+	 * The section disclosure stays immediately above the main page content.
+	 * Desktop keeps the original visible list.
 	 */
 	.main-row > .imp-medium {
 		order: 0;
@@ -2546,20 +2582,19 @@ a:focus-visible, button:focus-visible, details:focus-visible {
 
 	.main-row {
 		margin: 0;
-		gap: 1.5rem;
+		gap: 1rem;
 	}
 
 	.main-row > * {
 		padding: 0;
 	}
 
-	#main > .container,
-	#main > .docs {
-		padding: clamp(1rem, 4vw, 2rem);
-	}
-
 	.brand {
 		min-width: 0;
+	}
+
+	.header-bar {
+		padding: 10px 12px;
 	}
 
 	/* Hidden navigation must not expose invisible pointer or keyboard targets. */
@@ -2579,19 +2614,24 @@ a:focus-visible, button:focus-visible, details:focus-visible {
 
 	.section-sidebar {
 		order: -1;
+		width: 100%;
 	}
 
 	.section-sidebar > summary {
 		display: flex;
-		min-height: 48px;
+		min-height: 56px;
 		align-items: center;
 		justify-content: space-between;
 		gap: 1rem;
-		padding: 0.8rem 1rem;
-		border-radius: 0.6rem;
-		background: #2E7D32;
+		padding: 0.95rem 1.1rem;
+		border: 2px solid #F57C00;
+		border-left-width: 8px;
+		border-radius: 10px;
+		background: linear-gradient(135deg, #2E7D32, #1B5E20);
+		box-shadow: 0 6px 16px rgba(27, 94, 32, 0.24);
 		color: #ffffff;
-		font-weight: 700;
+		font-size: 1.05em;
+		font-weight: 800;
 		cursor: pointer;
 		list-style: none;
 	}
@@ -2601,27 +2641,26 @@ a:focus-visible, button:focus-visible, details:focus-visible {
 	}
 
 	.section-sidebar > summary::after {
-		content: "+";
-		font-size: 1.4em;
-		line-height: 1;
+		content: "Atvērt  +";
+		flex: 0 0 auto;
+		font-size: 0.82em;
+		font-weight: 700;
+		letter-spacing: 0;
 	}
 
 	.section-sidebar[open] > summary {
-		margin-bottom: 1rem;
+		margin-bottom: 0.75rem;
 	}
 
 	.section-sidebar[open] > summary::after {
-		content: "−";
+		content: "Aizvērt  −";
 	}
 }
 
 @media screen and (max-width: 420px) {
-	.container {
-		width: calc(100% - 24px);
-	}
-
-	.header-bar {
-		padding: 10px 12px;
+	#main > .container,
+	#main > .docs {
+		padding: 0.8rem;
 	}
 
 	.brand-logo {
@@ -2634,6 +2673,10 @@ a:focus-visible, button:focus-visible, details:focus-visible {
 
 	.brand-values {
 		display: none;
+	}
+
+	.site-nav a {
+		padding: 12px;
 	}
 }
 

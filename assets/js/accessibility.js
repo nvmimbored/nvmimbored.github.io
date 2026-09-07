@@ -1,5 +1,8 @@
 (function() {
   function initAccessibility() {
+    if (document.documentElement.dataset.accessibilityReady === 'true') return;
+    document.documentElement.dataset.accessibilityReady = 'true';
+
     const mobile = window.matchMedia('(max-width: 980px)');
     const viewport = document.querySelector('meta[name="viewport"]');
     const toggle = document.querySelector('.nav-toggle');
@@ -78,15 +81,12 @@
       county.setAttribute('aria-label', 'Jelgavas novada tīmekļvietne');
     }
 
-    document.querySelectorAll('.main-row .imp-medium').forEach((content) => {
-      const sidebar = content.previousElementSibling;
-      if (
-        !sidebar ||
-        sidebar.parentElement !== content.parentElement ||
-        sidebar.matches('.section-sidebar')
-      ) {
-        return;
-      }
+    document.querySelectorAll('.main-row').forEach((row) => {
+      const sidebar = Array.from(row.children).find((column) =>
+        column.matches('.col-3') && column.querySelector('.link-list')
+      );
+
+      if (!sidebar || sidebar.matches('.section-sidebar')) return;
 
       const details = document.createElement('details');
       details.className = sidebar.className + ' section-sidebar';
