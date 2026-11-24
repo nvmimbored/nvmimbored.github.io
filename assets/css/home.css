@@ -74,3 +74,15 @@
     object-fit: contain;
     display: block;
 }
+/* Full-width quick link (Jelgavas novads and its Izglītības pārvalde) */
+.quick-link-wide {
+    grid-column: 1 / -1;
+}
+/* Quick link without a logo: text instead of an image */
+.quick-link-text {
+    color: #2E7D32;
+    font-weight: 700;
+    font-size: 0.85em;
+    line-height: 1.3;
+    text-align: center;
+}
