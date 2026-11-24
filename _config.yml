@@ -4,7 +4,7 @@ title: Aizupes pamatskola
 description: "Aizupes pamatskola Līvbērzes pagastā, Jelgavas novadā – jaunumi, stundu saraksts, ēdienkarte, dokumenti un informācija skolēniem un vecākiem."
 lang: lv
 
-# Ģenerē /sitemap.xml un /robots.txt meklētājprogrammām.
+# Ģenerē /sitemap.xml meklētājprogrammām (robots.txt norāda uz to).
 # Lapas ar "sitemap: false" galvenē tajā netiek iekļautas.
 plugins:
   - jekyll-sitemap

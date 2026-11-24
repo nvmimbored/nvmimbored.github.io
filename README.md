@@ -42,7 +42,7 @@ Papildu iespējas galvenē: `css: [fails.css]` un `scripts: [fails.js]` (no `ass
 
 ## Meklētājprogrammas (Google)
 
-- `/sitemap.xml` un `/robots.txt` tiek ģenerēti automātiski (spraudnis `jekyll-sitemap`).
+- `/sitemap.xml` tiek ģenerēts automātiski (spraudnis `jekyll-sitemap`); `robots.txt` norāda uz to.
 - Katrai lapai galvenē ir `description` — tas parādās zem saites Google rezultātos.
 - Melnrakstiem, ko nav paredzēts rādīt meklētājos, galvenē pievieno `sitemap: false` un `noindex: true`.
 - Sākumlapā ir strukturēti dati par skolu (`_includes/school-data.html`) — adrese, tālrunis, darba laiks.
