@@ -18,6 +18,8 @@
   <meta property="og:image" content="{{ site.url }}/assets/css/images/aizupes_skola.jpg">
   <link rel="icon" href="images/skolas-logo.png">
   {% if page.section == 'home' %}{% include school-data.html %}{% endif %}
+  <link rel="preload" href="assets/fonts/lato-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/site.css">
   {% for stylesheet in page.css %}<link rel="stylesheet" href="assets/css/{{ stylesheet }}">

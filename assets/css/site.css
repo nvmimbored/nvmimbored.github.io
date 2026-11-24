@@ -15,7 +15,7 @@ ul.link-list li a[aria-current="page"] {
 	border-radius: 4px;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
-.staff-card h3 {
+.staff-card h2.h3 {
 	color: #2E7D32;
 	margin-top: 0;
 	margin-bottom: 0.5em;
@@ -28,6 +28,112 @@ ul.link-list li a[aria-current="page"] {
 .staff-card.is-orange {
 	border-left-color: #F57C00;
 }
-.staff-card.is-orange h3 {
-	color: #F57C00;
+.staff-card.is-orange h2.h3 {
+	color: var(--orange-text);
+}
+
+/* Page title: an <h1> that looks like the template's <h2> */
+h1.page-title {
+	text-transform: none;
+	font-size: 1.6em;
+	letter-spacing: -1px;
+	margin-bottom: 1em;
+}
+@media screen and (max-width: 736px) {
+	h1.page-title {
+		font-size: 1.4em;
+	}
+}
+
+/* Text for screen readers only */
+.visually-hidden {
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Footer credit links: darker orange so small text stays readable (4.5:1) */
+#copyright a {
+	color: var(--orange-text);
+}
+
+/* ------------------------------------------------------------------
+   Colour palette: change a colour here and it changes everywhere.
+   ------------------------------------------------------------------ */
+:root {
+	--green: #2E7D32;   --green-dark: #1B5E20;   --green-tint: #F1F8E9;
+	--orange: #F57C00;  --orange-dark: #E65100;  --orange-tint: #fff3e0;
+	--blue: #0277BD;    --blue-dark: #01579B;    --blue-tint: #f0f7fb;
+	--red: #D32F2F;     --red-dark: #B71C1C;     --red-tint: #fef5f5;
+	--purple: #5e35b1;  --purple-dark: #4527a0;  --purple-tint: #ede7f6;
+	--violet: #6A1B9A;
+	--orange-text: #b75d00; /* orange for text on white: readable (4.5:1) */
+}
+
+/* Accent: pick one per box or button (accent-green, accent-orange, ...) */
+.accent-green  { --accent: var(--green);  --accent-dark: var(--green-dark);  --accent-tint: var(--green-tint); }
+.accent-orange { --accent: var(--orange); --accent-dark: var(--orange-dark); --accent-tint: var(--orange-tint); }
+/* White text on bright orange is hard to read: orange buttons use the darker shade */
+a.btn.accent-orange { background-color: var(--orange-text); }
+.accent-blue   { --accent: var(--blue);   --accent-dark: var(--blue-dark);   --accent-tint: var(--blue-tint); }
+.accent-red    { --accent: var(--red);    --accent-dark: var(--red-dark);    --accent-tint: var(--red-tint); }
+.accent-purple { --accent: var(--purple); --accent-dark: var(--purple-dark); --accent-tint: var(--purple-tint); }
+
+/* White box with a coloured left edge */
+.card {
+	background-color: #fdfdfd;
+	border: 1px solid #e0e0e0;
+	border-left: 5px solid var(--accent);
+	padding: 1.5em;
+	border-radius: 4px;
+}
+
+/* Tinted highlight box with a coloured left edge */
+.callout {
+	background-color: var(--accent-tint);
+	border-left: 5px solid var(--accent);
+	padding: 1.5em;
+	border-radius: 4px;
+}
+
+/* Solid button link */
+a.btn {
+	display: inline-block;
+	background-color: var(--accent);
+	color: white;
+	padding: 0.6em 1.2em;
+	text-decoration: none;
+	border-radius: 4px;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+/* Images carry width/height attributes so the page doesn't jump while they
+   load; this keeps their proportions when CSS changes the width. */
+img[width][height] {
+	height: auto;
+}
+
+/* Section headings one level below the page title, styled like the
+   template's h3/h4 so the look stays the same. */
+h2.h3 {
+	color: #333;
+	font-size: 1.2em;
+	letter-spacing: inherit;
+	margin-bottom: 0.8em;
+}
+h3.h4 {
+	font-size: 1em;
+	margin-bottom: 0.5em;
+}
+
+/* List with a paragraph-sized gap between items */
+.spaced-list > li + li {
+	margin-top: 1.25em;
 }

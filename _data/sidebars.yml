@@ -11,7 +11,8 @@ school:
     - { url: uznemsana.html, text: Uzņemšana }
     - { url: macibuprogrammas.html, text: Izglītības programmas }
     - { url: ekoskola.html, text: Ekoskola }
-    - { url: biblioteka.html, text: Bibliotēka }
+    # Bibliotēka: atgriezt sarakstā, kad lapai būs saturs
+    # - { url: biblioteka.html, text: Bibliotēka }
     - { url: vesture.html, text: Vēsture }
 
 students:
