@@ -1,0 +1,5 @@
+# Jekyll by default skips files whose names start with "_".
+# These menu PDFs do, so they are listed here to get published.
+include:
+  - _dienkarte_1_4_klase.pdf
+  - _dienkarte_5_9_klase.pdf
