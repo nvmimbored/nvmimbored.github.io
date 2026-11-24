@@ -1,0 +1,10 @@
+{% comment %}
+  Iegulta PDF dokumenta parādīšana ar saiti rezervei.
+  Lietošana: {% include pdf.html file="assets/docs/fails.pdf" %}
+{% endcomment %}
+<div style="margin-top: 20px; margin-bottom: 20px;">
+  <iframe src="{{ include.file }}" title="{{ include.title | default: 'PDF dokuments' }}" width="100%" height="800px" style="border: 1px solid #ccc;"></iframe>
+  <p style="font-size: 0.9em; margin-top: 5px;">
+    Neredzi dokumentu? <a href="{{ include.file }}" target="_blank" rel="noopener">Atvērt PDF failu jaunā logā</a>.
+  </p>
+</div>
