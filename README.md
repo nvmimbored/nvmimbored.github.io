@@ -25,6 +25,7 @@ layout: sidebar
 title: Jaunā lapa        # parādās pārlūka cilnē: "Jaunā lapa | Aizupes pamatskola"
 sidebar: school          # school | students | parents | projects
 section: school          # kura galvenās izvēlnes poga ir izcelta
+description: "Īss lapas apraksts (līdz ~155 zīmēm), ko rāda Google rezultātos."
 ---
 <section>
   <h2>Virsraksts</h2>
@@ -38,6 +39,14 @@ Lapai bez sānjoslas lieto `layout: default` un pats saturs sākas ar `<div id="
 
 Papildu iespējas galvenē: `css: [fails.css]` un `scripts: [fails.js]` (no `assets/css/` un `assets/js/`),
 `sidebar_current: lapa.html`, ja sānjoslā jāizceļ cita lapa (piem., rakstam projekta iekšienē).
+
+## Meklētājprogrammas (Google)
+
+- `/sitemap.xml` tiek ģenerēts automātiski (spraudnis `jekyll-sitemap`); `robots.txt` norāda uz to.
+- Katrai lapai galvenē ir `description` — tas parādās zem saites Google rezultātos.
+- Melnrakstiem, ko nav paredzēts rādīt meklētājos, galvenē pievieno `sitemap: false` un `noindex: true`.
+- Sākumlapā ir strukturēti dati par skolu (`_includes/school-data.html`) — adrese, tālrunis, darba laiks.
+  Ja kontakti mainās, jāatjauno arī tur un `_includes/footer.html`.
 
 ## Pārbaude
 

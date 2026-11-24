@@ -1,0 +1,36 @@
+{%- comment -%}
+  Strukturēti dati meklētājprogrammām (schema.org): Google no tiem saprot,
+  ka šī ir skola, kur tā atrodas un kā ar to sazināties.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "School",
+  "name": "Aizupes pamatskola",
+  "url": "{{ site.url }}/",
+  "logo": "{{ site.url }}/images/skolas-logo.png",
+  "image": "{{ site.url }}/assets/css/images/aizupes_skola.jpg",
+  "telephone": "+371 63083046",
+  "email": "aizupespsk@jelgavasnovads.lv",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tušķi",
+    "addressLocality": "Līvbērzes pagasts",
+    "addressRegion": "Jelgavas novads",
+    "postalCode": "LV-3003",
+    "addressCountry": "LV"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 56.6519,
+    "longitude": 23.6272
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "16:00"
+  },
+  "sameAs": ["https://www.facebook.com/aizupespamatskola"]
+}
+</script>
