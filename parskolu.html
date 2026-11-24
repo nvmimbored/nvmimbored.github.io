@@ -1,90 +1,18 @@
-<!DOCTYPE HTML>
-<!--
-	Minimaxing by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Aizupes pamatskola</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body>
-		<div id="page-wrapper">
+---
+layout: default
+title: Par skolu
+sidebar: school
+sidebar_current: none
+section: school
+---
+                <div id="main">
+                    <div class="container">
+                        <div class="row main-row">
+                            <div class="col-3 col-12-medium">
 
-			<!-- Header -->
-				<header class="site-header">
-  <div class="header-bar">
+                                {% include sidebar.html %}
 
-    <!-- Left: School identity -->
-    <a class="brand" href="index.html">
-      <img class="brand-logo" src="images/skolas-logo.png" alt="Aizupes pamatskolas logo" />
-      <div class="brand-text">
-        <div class="brand-name">Aizupes pamatskola</div>
-        <div class="brand-values">Cieņa • Atbildība • Drošība</div>
-      </div>
-    </a>
-
-    <!-- Mobile toggle -->
-    <button class="nav-toggle" aria-label="Atvērt izvēlni" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <!-- Center: Navigation -->
-    <nav class="site-nav" aria-label="Galvenā navigācija">
-    	<a href="index.html">Sākums</a>
-    	<a href="parskolu.html" class="is-active">Skola</a>
-    	<a href="skoleniem.html">Skolēniem</a>
-    	<a href="vecakiem.html">Vecākiem</a>
-    	<a href="projekti.html">Projekti</a>
-    	<a href="dokumentacija.html">Dokumenti</a>
-	</nav>
-
-    <!-- Right: County logo -->
-    <a class="county" href="#" aria-label="Jelgavas novads">
-      <img class="county-logo" src="images/jelgavas-novads-logo.jpg" alt="Jelgavas novads logo" />
-    </a>
-
-  </div>
-</header>
-
-<script>
-  // Mobile menu toggle (safe on pages where header exists)
-  document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('.site-nav');
-    if (!toggle || !nav) return;
-
-    toggle.addEventListener('click', () => {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  });
-</script>
-
-			<!-- Main -->
-				<div id="main">
-					<div class="container">
-						<div class="row main-row">
-							<div class="col-3 col-12-medium">
-
-								<section>
-									<h2>Svarīga informācija</h2>
-									<ul class="link-list">
-										<li><a href="darbinieki.html">Darbinieki </a></li>
-										<li><a href="atbalstapersonals.html">Atbalsta personāls</a></li>
-										<li><a href="vertibas.html">Vērtības</a></li>
-										<li><a href="uznemsana.html">Uzņemšana</a></li>
-										<li><a href="macibuprogrammas.html">Izglītības programmas</a></li>
-										<li><a href="ekoskola.html">Ekoskola</a></li>
-										<li><a href="biblioteka.html">Bibliotēka</a></li>
-										<li><a href="vesture.html">Vēsture</a></li>
-									</ul>
-								</section>
-
-								<section>
+                                <section>
     <h2>Aizupe skaitļos</h2>
     <ul style="list-style-type: none; padding: 0; margin: 0;">
         <li style="margin-bottom: 1em; background: #fdfdfd; padding: 12px; border-left: 4px solid #2E7D32; border-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
@@ -106,12 +34,12 @@
     </ul>
 </section>
 
-							</div>
-							<div class="col-6 col-12-medium imp-medium">
+                            </div>
+                            <div class="col-6 col-12-medium imp-medium">
 
-								<section class="middle-content">
+                                <section class="middle-content">
     <h2>Par skolu</h2>
-    
+
     <!-- Īss, silts ievadteksts -->
     <p style="font-size: 1.05em; color: #444; line-height: 1.6; margin-bottom: 2em;">
         Aizupes pamatskola ir vieta, kur satiekas zinātkāre, radošums un savstarpējā cieņa. Mūsu mērķis ir radīt drošu, atbalstošu un mūsdienīgu vidi, kurā katrs bērns var atklāt savus talantus un veiksmīgi sagatavoties turpmākajiem dzīves izaicinājumiem.
@@ -120,13 +48,13 @@
     <!-- Kartes un adreses bloks -->
     <section>
         <div style="overflow: hidden; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.288029345187!2d23.6271687921969!3d56.651899652116214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef3b360fc0bfbf%3A0x187de071023e8bbe!2sAizupes%20pamatskola!5e0!3m2!1slv!2slv!4v1770250448623!5m2!1slv!2slv" 
-                width="100%" 
-                height="300" 
-                style="border:0; display: block;" 
-                allowfullscreen="" 
-                loading="lazy" 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2608.288029345187!2d23.6271687921969!3d56.651899652116214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ef3b360fc0bfbf%3A0x187de071023e8bbe!2sAizupes%20pamatskola!5e0!3m2!1slv!2slv!4v1770250448623!5m2!1slv!2slv"
+                width="100%"
+                height="300"
+                style="border:0; display: block;"
+                allowfullscreen=""
+                loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
         </div>
@@ -137,16 +65,16 @@
         </p>
     </section>
 </section>
-								</section>
+                                </section>
 
-							</div>
-							<div class="col-3 col-12-medium">
+                            </div>
+                            <div class="col-3 col-12-medium">
 
-								<section>
-									<h2>Skolas vadība</h2>
-									<ul class="small-image-list" style="list-style-type: none; padding: 0;">
+                                <section>
+                                    <h2>Skolas vadība</h2>
+                                    <ul class="small-image-list" style="list-style-type: none; padding: 0;">
     <li style="margin-bottom: 24px;">
-        
+
         <h3 style="margin: 0; font-weight: bold;">Amanda Siliņa</h3>
         <p style="margin: 2px 0; font-size: 0.9em; color: #555;">Skolas direktore</p>
         <a href="mailto:amanda.silina@jelgavasnovads.lv" style="font-size: 0.85em; text-decoration: none;">amanda.silina<wbr>@jelgavasnovads.lv</a>
@@ -164,72 +92,9 @@
         <a href="mailto:erita.karlsone@jelgavasnovads.lv" style="font-size: 0.85em; text-decoration: none;">erita.karlsone<wbr>@jelgavasnovads.lv</a>
     </li>
 </ul>
-								</section>
+                                </section>
 
-							</div>
-						</div>
-					</div>
-				</div>
-
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-12">
-								<div class="row">
-    
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Saziņa</h2>
-            <p>
-                <strong>Aizupes pamatskola</strong><br>
-				Darba laiks: 08:00 - 16:00<br>
-                Tālrunis: <a href="tel:+37163083046">+371 63 083 046</a><br>
-                E-pasts: <a href="mailto:aizupespsk@jelgavasnovads.lv">aizupespsk@jelgavasnovads.lv</a>
-            </p>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Svarīgas sadaļas</h2>
-            <ul class="style2"> 
-                <li><a href="uznemsana.html">Uzņemšana</a></li>
-                <li><a href="stundusaraksts.html">Stundu saraksts</a></li>
-                <li><a href="biedriba.html">Biedrība</a></li>
-                <li><a href="vecakiem.html">Vecākiem</a></li>
-                <li><a href="darbinieki.html">Darbinieki</a></li>
-            </ul>
-        </section>
-    </div>
-
-    <div class="col-4 col-12-medium">
-        <section>
-            <h2>Adrese</h2>
-            <p>
-                Tušķi, Līvbērzes pag.,<br>
-				Jelgavas novads,<br>
-				LV-3003<br>
-            <a href="https://maps.app.goo.gl/bQqfStRGKT9V3YeQ8">Atvērt kartē</a>
-			</p>
-        </section>
-    </div>
-
-								<div id="copyright">
-									&copy; Vietnes dizains balstīts uz veidni, kuras autors ir <a href="https://html5up.net/minimaxing">HTML5UP</a>, licencēta saskaņā ar <a href="https://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 (CC BY 3.0)</a> licenci, un ir pielāgota Aizupes pamatskolas vajadzībām.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
-</html>
+                            </div>
+                        </div>
+                    </div>
+                </div>

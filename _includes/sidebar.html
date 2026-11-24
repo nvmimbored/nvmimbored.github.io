@@ -1,0 +1,10 @@
+{% assign group = site.data.sidebars[page.sidebar] %}
+{% assign current = page.sidebar_current | default: page.url | remove_first: "/" %}
+<section>
+  <h2>{{ group.title }}</h2>
+  <ul class="link-list">
+    {% for link in group.links %}
+    <li><a href="{{ link.url }}"{% if link.url == current %} aria-current="page"{% endif %}>{{ link.text }}</a></li>
+    {% endfor %}
+  </ul>
+</section>

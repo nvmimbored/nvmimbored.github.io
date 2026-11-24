@@ -1,0 +1,26 @@
+/* Pielāgots stils darbinieku citātiem */
+.staff-quotes {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Palielināta atstarpe starp dažādiem citātiem (bija 1.5rem) */
+    margin-top: 2rem;
+}
+.staff-quote {
+    border-left: 4px solid #F57C00;
+    background: #fdfdfd;
+    padding: 1.5rem;
+    margin: 0;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+.staff-quote p {
+    font-style: italic;
+    margin-bottom: 0.2rem; /* Samazināta atstarpe, lai vārds būtu tuvāk citātam (bija 0.8rem) */
+    color: #333;
+    line-height: 1.6;
+}
+.staff-quote footer {
+    font-weight: bold;
+    color: #2E7D32;
+    font-size: 0.9em;
+}
