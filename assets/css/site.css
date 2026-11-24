@@ -5,3 +5,29 @@ ul.link-list li a[aria-current="page"] {
 	color: #2E7D32;
 	border-left-color: #F57C00;
 }
+
+/* Specialist cards (Atbalsta personāls) — alternate green / orange */
+.staff-card {
+	margin-bottom: 2em;
+	padding: 1.5em;
+	background-color: #fdfdfd;
+	border-left: 5px solid #2E7D32;
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.staff-card h3 {
+	color: #2E7D32;
+	margin-top: 0;
+	margin-bottom: 0.5em;
+	font-size: 1.2em;
+}
+.staff-card p {
+	margin-bottom: 0;
+	line-height: 1.6;
+}
+.staff-card.is-orange {
+	border-left-color: #F57C00;
+}
+.staff-card.is-orange h3 {
+	color: #F57C00;
+}
