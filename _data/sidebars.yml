@@ -1,0 +1,43 @@
+# Sānjoslas saites katrai sadaļai.
+# Lapa izvēlas sānjoslu ar "sidebar: <nosaukums>" savā galvenē (front matter).
+# Lai pievienotu jaunu saiti, pietiek ar vienu rindu šeit — tā parādīsies visās sadaļas lapās.
+
+school:
+  title: Svarīga informācija
+  links:
+    - { url: darbinieki.html, text: Darbinieki }
+    - { url: atbalstapersonals.html, text: Atbalsta personāls }
+    - { url: vertibas.html, text: Vērtības }
+    - { url: uznemsana.html, text: Uzņemšana }
+    - { url: macibuprogrammas.html, text: Izglītības programmas }
+    - { url: ekoskola.html, text: Ekoskola }
+    - { url: biblioteka.html, text: Bibliotēka }
+    - { url: vesture.html, text: Vēsture }
+
+students:
+  title: Skolēniem
+  links:
+    - { url: stundusaraksts.html, text: Stundu saraksts }
+    - { url: konsultacijas.html, text: Konsultācijas }
+    - { url: eksamenugrafiks.html, text: Eksāmenu grafiks }
+    - { url: interesuizglitiba.html, text: Interešu izglītība }
+    - { url: brivlaiki.html, text: Brīvlaiki }
+    - { url: skolenupadome.html, text: Skolēnu padome }
+
+parents:
+  title: Vecākiem
+  links:
+    - { url: biedriba.html, text: Biedrība }
+    - { url: vecakupadome.html, text: Padome }
+    - { url: edienkarte.html, text: Ēdienkarte }
+
+projects:
+  title: Projekti
+  links:
+    - { url: jadara-kopa.html, text: JĀdara kopā }
+    - { url: erasmus.html, text: Erasmus+ }
+    - { url: mot.html, text: MOT }
+    - { url: kiva.html, text: KiVa }
+    - { url: skolassoma.html, text: Skolas soma }
+    - { url: stem.html, text: STEM }
+    - { url: veselibuveicinosaskola.html, text: Veselību veicinoša skola }
