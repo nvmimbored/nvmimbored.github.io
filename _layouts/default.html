@@ -4,7 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% if page.title %}{{ page.title | escape }} | {% endif %}Aizupes pamatskola</title>
-  {% if page.description %}<meta name="description" content="{{ page.description | escape }}">{% endif %}
+  {% assign seo_title = page.title | default: site.title %}
+  {% assign seo_description = page.description | default: site.description %}
+  <meta name="description" content="{{ seo_description | escape }}">
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="lv_LV">
+  <meta property="og:site_name" content="Aizupes pamatskola">
+  <meta property="og:title" content="{{ seo_title | escape }}">
+  <meta property="og:description" content="{{ seo_description | escape }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:image" content="{{ site.url }}/assets/css/images/aizupes_skola.jpg">
+  <link rel="icon" href="images/skolas-logo.png">
+  {% if page.section == 'home' %}{% include school-data.html %}{% endif %}
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/site.css">
   {% for stylesheet in page.css %}<link rel="stylesheet" href="assets/css/{{ stylesheet }}">
