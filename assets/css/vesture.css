@@ -76,7 +76,7 @@
 .history-period-img .img-caption {
     font-size: 0.82em;
     font-style: italic;
-    color: #777;
+    color: #666;
     line-height: 1.3;
     text-align: center;
     margin-top: 0.5em;
@@ -86,7 +86,7 @@
 .history-period.accent-green { border-left: 5px solid #2E7D32; }
 .history-period.accent-orange { border-left: 5px solid #F57C00; }
 
-.history-period.accent-orange .history-period-years { background-color: #F57C00; }
+.history-period.accent-orange .history-period-years { background-color: #e07000; } /* darker than #F57C00 for readable white text */
 
 @media (max-width: 680px) {
     .history-period-img {
